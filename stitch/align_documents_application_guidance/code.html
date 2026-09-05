@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f1f4f9", "border-strong": "#C8C0B5", "surface-container-highest": "#e0e3e8", "surface-container": "#ebeef3", "status-warning-bg": "#FEF7EC", "status-info-text": "#18426B", "primary": "#002046", "error-container": "#ffdad6", "status-error-text": "#991B1B", "inverse-surface": "#2d3135", "tertiary-fixed": "#d1e4fd", "primary-container": "#1b365d", "on-secondary": "#ffffff", "on-primary-fixed": "#001b3d", "border-subtle": "#E5DFD7", "primary-fixed-dim": "#aec7f7", "surface-card": "#FFFFFF", "tertiary-fixed-dim": "#b5c8e0", "inverse-on-surface": "#eef1f6", "on-secondary-container": "#337053", "on-primary": "#ffffff", "secondary-fixed-dim": "#95d4b2", "text-muted": "#7A828B", "text-secondary": "#57606A", "surface-tint": "#465f88", "text-primary": "#1E2227", "on-error-container": "#93000a", "on-primary-container": "#87a0cd", "background": "#f7f9ff", "primary-fixed": "#d6e3ff", "surface-subtle": "#F3EFEA", "on-surface-variant": "#44474e", "secondary-fixed": "#b0f1cd", "on-tertiary": "#ffffff", "surface-container-high": "#e5e8ee", "outline-variant": "#c4c6cf", "surface-ivory": "#FAF8F5", "on-surface": "#181c20", "outline": "#74777f", "inverse-primary": "#aec7f7", "surface-variant": "#e0e3e8", "status-success-text": "#1F5239", "surface": "#f7f9ff", "status-warning-text": "#8F5B10", "tertiary-container": "#24374a", "surface-container-lowest": "#ffffff", "status-error-bg": "#FDF2F2", "on-tertiary-container": "#8da0b7", "surface-bright": "#f7f9ff", "status-info-bg": "#EEF4FA", "tertiary": "#0d2234", "on-secondary-fixed-variant": "#0e5137", "status-success-bg": "#EDF6F0", "surface-dim": "#d7dadf", "secondary-container": "#b0f1cd", "on-background": "#181c20", "on-primary-fixed-variant": "#2e476f", "on-tertiary-fixed": "#081d2f", "secondary": "#2c694d", "on-tertiary-fixed-variant": "#36485c", "on-secondary-fixed": "#002113", "on-error": "#ffffff", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "1200px", "space-2xs": "0.25rem", "space-3xl": "4rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "space-xs": "0.5rem" }, "fontFamily": { "body-sm": [ "Manrope" ], "headline-lg-mobile": [ "Manrope" ], "display": [ "Manrope" ], "label-sm": [ "Manrope" ], "headline-sm": [ "Manrope" ], "caption": [ "Manrope" ], "body-md": [ "Manrope" ], "body-lg": [ "Manrope" ], "label-md": [ "Manrope" ], "display-mobile": [ "Manrope" ], "headline-lg": [ "Manrope" ], "financial-stat-lg": [ "Manrope" ], "headline-md": [ "Manrope" ], "financial-stat-md": [ "Manrope" ] }, "fontSize": { "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display": [ "44px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "caption": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "financial-stat-lg": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "financial-stat-md": [ "22px", { "lineHeight": "28px", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-ivory font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-ivory/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ALIGN Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="bg-surface-subtle text-text-primary font-label-md rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-subtle text-text-primary font-label-md rounded-lg" data-path="how-it-works" href="#">How it works</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center h-12 px-space-md rounded-lg font-label-md text-label-md text-text-primary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="sign-in" href="#">Sign in</a><a class="inline-flex items-center justify-center h-12 px-space-lg rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_2px_6px_rgba(33,37,41,0.03)] hover:bg-primary transition-colors" data-path="need-analysis" href="#">Find a Scheme</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface-ivory flex-1"><div class="flex flex-col w-full">
+<!-- GAZETTE REGISTRY METADATA HEADER -->
+<div class="w-full bg-surface-subtle border-b border-border-subtle py-2 px-gutter-mobile lg:px-gutter-desktop">
+<div class="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-2 text-xs">
+<div class="flex items-center gap-2 text-text-secondary">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm tracking-wider uppercase text-text-primary">Gazette Nodal Partner Registry Active</span>
+<span class="text-text-muted">•</span>
+<span class="font-caption text-text-muted">Ref: PMEGP-WB-KOL-2024</span>
+</div>
+<div class="flex items-center gap-3 text-text-muted font-caption">
+<span>Non-Discretionary Public Audit Trail</span>
+<span class="hidden sm:inline">•</span>
+<span class="hidden sm:inline">Ministry of MSME / SLBC West Bengal</span>
+</div>
+</div>
+</div>
+<!-- PERSISTENT STEPPER -->
+<div class="w-full bg-surface-card border-b border-border-subtle sticky top-20 z-30 shadow-[0_1px_4px_rgba(0,0,0,0.02)]">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-3">
+<div class="flex items-center justify-between overflow-x-auto no-scrollbar py-1">
+<!-- Step 1 -->
+<div class="flex items-center gap-2 opacity-80 shrink-0">
+<div class="w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center font-label-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-text-secondary hidden md:inline">01 Need</span>
+</div>
+<div class="w-8 lg:w-12 h-0.5 bg-status-success-text/30 shrink-0 mx-2"></div>
+<!-- Step 2 -->
+<div class="flex items-center gap-2 opacity-80 shrink-0">
+<div class="w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center font-label-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-text-secondary hidden md:inline">02 Match</span>
+</div>
+<div class="w-8 lg:w-12 h-0.5 bg-status-success-text/30 shrink-0 mx-2"></div>
+<!-- Step 3 -->
+<div class="flex items-center gap-2 opacity-80 shrink-0">
+<div class="w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center font-label-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-text-secondary hidden md:inline">03 Compare</span>
+</div>
+<div class="w-8 lg:w-12 h-0.5 bg-status-success-text/30 shrink-0 mx-2"></div>
+<!-- Step 4 -->
+<div class="flex items-center gap-2 opacity-80 shrink-0">
+<div class="w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center font-label-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-text-secondary hidden md:inline">04 Partner</span>
+</div>
+<div class="w-8 lg:w-12 h-0.5 bg-primary shrink-0 mx-2"></div>
+<!-- Step 5 (ACTIVE) -->
+<div class="flex items-center gap-2 shrink-0 bg-primary text-on-primary px-3 py-1.5 rounded-full shadow-sm">
+<span class="w-5 h-5 rounded-full bg-on-primary text-primary flex items-center justify-center font-label-sm font-bold text-[11px]">05</span>
+<span class="font-label-sm font-bold tracking-tight">Apply ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CONTEXT BANNER (PREVIOUS CHOICES SUMMARY) -->
+<div class="max-w-[1200px] w-full mx-auto px-gutter-mobile lg:px-gutter-desktop mt-6">
+<div class="bg-surface-card rounded-xl p-5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] border border-border-subtle">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-status-info-bg text-status-info-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">assured_workload</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-text-muted uppercase tracking-wider">Target Scheme</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-success-bg text-status-success-text">35% Subsidy Verified</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary">PMEGP Term Loan • ₹1,20,000</p>
+<p class="font-caption text-text-secondary">Ceiling ₹45L • 8.0% p.a. Indicative • 36-Month Tenure • ₹42,000 Non-repayable Margin Money</p>
+</div>
+</div>
+<div class="h-10 w-px bg-border-subtle hidden sm:block"></div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-subtle text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<div>
+<span class="font-label-sm text-text-muted uppercase tracking-wider">Authorized Nodal Partner</span>
+<p class="font-headline-sm text-headline-sm text-primary">SBI — SME Park Street Branch</p>
+<p class="font-caption text-text-secondary">12/A Park Street, Kolkata 700016 • 2.4 km away • Lead Officer Shri S. Chatterjee</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-3 lg:pt-0 border-t lg:border-t-0 border-border-subtle">
+<button class="h-9 px-3 rounded-lg border border-border-strong text-text-primary hover:bg-surface-subtle font-label-sm text-label-sm transition-colors flex items-center gap-1.5" onclick="alert('Navigating back to Scheme Comparison...')" type="button">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span>Change scheme</span>
+</button>
+<button class="h-9 px-3 rounded-lg border border-border-strong text-text-primary hover:bg-surface-subtle font-label-sm text-label-sm transition-colors flex items-center gap-1.5" onclick="alert('Navigating back to Partner Selection...')" type="button">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+<span>Change partner</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN EDITORIAL HEADING -->
+<section class="max-w-[1200px] w-full mx-auto px-gutter-mobile lg:px-gutter-desktop mt-8 mb-6">
+<div class="max-w-3xl">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest font-semibold flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-base">verified</span>
+        Application Guidance &amp; Statutory Dossier • Step 5 of 5
+      </span>
+<h1 class="font-display text-display text-text-primary tracking-tight">
+        You're ready for the next step.
+      </h1>
+<p class="font-body-lg text-body-lg text-text-secondary mt-3 leading-relaxed">
+        Here are the verified statutory documents you will need and the step-by-step dispatch process for your selected scheme and authorized nodal desk. ALIGN equips you with clear, audited requirements before you visit the branch.
+      </p>
+</div>
+</section>
+<!-- TWO COLUMN CONTENT GRID -->
+<main class="max-w-[1200px] w-full mx-auto px-gutter-mobile lg:px-gutter-desktop mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN (60% / 7 COLS) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- READINESS DOSSIER SUMMARY -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-label-sm text-text-muted uppercase tracking-wider">Official Application Overview</span>
+<h2 class="font-headline-md text-headline-md text-primary">Your Application Readiness Dossier</h2>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success-bg text-status-success-text font-label-sm border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Ready to Prepare • 6 Core Documents
+            </span>
+</div>
+<!-- Spec Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface-subtle rounded-lg">
+<div>
+<span class="font-caption text-caption text-text-muted block">Scheme Program</span>
+<span class="font-label-md text-label-md text-text-primary">PMEGP Credit Link</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Target Funding</span>
+<span class="font-label-md text-label-md text-primary">₹1,20,000</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Capital Subsidy</span>
+<span class="font-label-md text-label-md text-secondary">₹42,000 (35%)</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Lending Desk</span>
+<span class="font-label-md text-label-md text-text-primary">SBI Park Street</span>
+</div>
+</div>
+</div>
+<!-- DOCUMENT CHECKLIST CARD -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-border-subtle">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Documents you may need</h3>
+<p class="font-caption text-caption text-text-secondary mt-0.5">
+                Sourced directly from Ministry of MSME / KVIC Gazette Guidelines 2024. Confirm final nodal desk submission batches with SBI Park Street.
+              </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-secondary bg-status-success-bg px-2.5 py-1 rounded-md" id="doc-counter">6/6 selected</span>
+</div>
+</div>
+<!-- Checkbox List -->
+<div class="flex flex-col divide-y divide-border-subtle mt-2">
+<!-- Doc 1 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Aadhaar Card / Identity Proof</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-info-bg text-status-info-text">Mandatory • Identity</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">UIDAI verified biometrics or DigiLocker XML. Primary KYC for margin money escrow setup.</p>
+</div>
+</label>
+<!-- Doc 2 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Special Category / Caste Certificate (SC/ST/OBC/Women/Minority)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-success-bg text-status-success-text">Mandatory for 35% Subsidy</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Required to claim the higher 35% rural/special category capital subsidy rather than standard 25%.</p>
+</div>
+</label>
+<!-- Doc 3 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Proof of Annual Family Income / Rural Area Certificate</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-info-bg text-status-info-text">Mandatory • Income</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Issued by competent revenue authority (BDO/SDO) confirming income tier under ₹4.5L ceiling.</p>
+</div>
+</label>
+<!-- Doc 4 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Detailed Project Report (DPR) / Tailoring Machinery Quotation</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-warning-bg text-status-warning-text">Project Specific • Capital Asset</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Itemized machinery invoice from accredited supplier for sewing machines, overlock units &amp; raw material fabric.</p>
+</div>
+</label>
+<!-- Doc 5 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Residential / Commercial Premise Tenancy or Ownership Proof</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-info-bg text-status-info-text">Address Proof</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Valid rent agreement, electricity utility bill, or municipality tax receipt for the tailoring workshop site in Kolkata.</p>
+</div>
+</label>
+<!-- Doc 6 -->
+<label class="py-4 flex items-start gap-3.5 cursor-pointer group hover:bg-surface-ivory/50 rounded-lg px-2 -mx-2 transition-colors">
+<input checked="" class="mt-1 w-4 h-4 text-primary rounded border-border-strong focus:ring-primary accent-primary doc-check" onchange="updateDocCount()" type="checkbox"/>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-sm text-[16px] text-text-primary group-hover:text-primary transition-colors">Bank Account Details &amp; Cancelled Cheque (SBI/Nationalised)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-status-info-bg text-status-info-text">Mandatory • Disbursement</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Active savings/current account for direct margin money release and subsidy escrow linkage.</p>
+</div>
+</label>
+</div>
+<!-- Citation Footer -->
+<div class="mt-6 pt-3 border-t border-border-subtle flex items-center justify-between text-text-muted">
+<span class="font-caption text-caption">Source: Gazette Ref MSME/PMEGP/2024/CIR-09. Partner desk variations apply.</span>
+<span class="font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span>
+              Audited Standards
+            </span>
+</div>
+</div>
+<!-- DOWNLOAD & EXPORT DOCK -->
+<div class="bg-primary-container text-on-primary rounded-xl p-6 shadow-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-1 text-on-primary-container">
+<span class="material-symbols-outlined text-lg">description</span>
+<span class="font-label-sm uppercase tracking-wider">Application Package</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Print or Save Your Dossier</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high/90 mt-1">
+                Generates an official ALIGN Dossier containing your scheme specifications, verified partner desk slip, checklist barcodes, and required gazette Annexures.
+              </p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+<button class="h-12 px-5 bg-on-primary text-primary font-label-md rounded-lg shadow-sm hover:bg-surface-subtle transition-all flex items-center justify-center gap-2 font-semibold" onclick="openPdfModal()" type="button">
+<span class="material-symbols-outlined text-xl">download</span>
+<span>Download Application Checklist (PDF) ↓</span>
+</button>
+<button class="h-12 px-4 bg-transparent hover:bg-on-primary/10 text-on-primary font-label-md rounded-lg border border-on-primary/30 transition-all flex items-center justify-center gap-2" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-xl">print</span>
+<span>Print Dossier</span>
+</button>
+</div>
+</div>
+</div>
+<!-- PHOTOGRAPHIC TRUST ANCHOR -->
+<div class="relative rounded-xl overflow-hidden shadow-sm bg-surface-subtle border border-border-subtle p-6 flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-44 h-36 rounded-lg overflow-hidden shrink-0 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A warm, respectful documentary photograph of a female Indian entrepreneur organizing verified financial documents and cloth fabric swatches on a clean wooden table in her modest workshop in Kolkata. Soft natural morning light, gentle earthy tones, warm ivory atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd5zGlZ2BSzabwZufhw7F0V8RrmqqPqMhAW6W94O2ptG2R4DsprUU5NnztJNeLx5NJjd0z-O2S7Op0RaOiRsnnQFnQGntnj_MwBuemC_kBULQjuuc8C95lRr77MxSk6tafh74Bstp_c0yPU66LXlZIXscYSuVhJAR1Dseq0Y53uy09EFG6dTejWNzM4iDZmsJTKdAiBBOoJ-MHC13Oh4qmfP8E_Z6PUj7OwyXCj4BdDyCfN2Mb_JVBqA"/>
+</div>
+<div>
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-1">Dignified Financial Mobility</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary">Preparation prevents delays at the desk.</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+              Statutory officers at SBI Park Street require hard copies in two attested sets. Bringing your complete folder reduces approval cycles from 28 days to an average of 9 working days.
+            </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (40% / 5 COLS) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- AUTHORIZED PARTNER NODAL DESK CARD -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-text-muted uppercase tracking-wider">Channel Destination</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-info-bg text-status-info-text font-label-sm">
+<span class="material-symbols-outlined text-[13px]">verified_user</span>
+              Gazette Nodal Partner • Desk Active
+            </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">State Bank of India</h3>
+<p class="font-label-md text-text-secondary font-medium">SME Park Street Branch (Branch Code: 01452)</p>
+<div class="mt-4 space-y-3 pt-3 border-t border-border-subtle">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-text-muted text-lg mt-0.5">location_on</span>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary">12/A Park Street, Chowringhee, Kolkata 700016</p>
+<p class="font-caption text-caption text-text-muted">2.4 km away • Est. 12 min travel via Park Street Metro</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-text-muted text-lg mt-0.5">schedule</span>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary">10:00 – 16:00 (Mon – Sat)</p>
+<p class="font-caption text-caption text-text-muted">Closed on 2nd &amp; 4th Saturdays, Sundays &amp; State Holidays</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-text-muted text-lg mt-0.5">badge</span>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary">Shri S. Chatterjee (Lead MSME Officer)</p>
+<p class="font-caption text-caption text-text-muted">PMEGP Portal Integration Desk • Counter 04</p>
+</div>
+</div>
+</div>
+<!-- Desk Actions -->
+<div class="grid grid-cols-2 gap-3 mt-6">
+<a class="h-11 px-3 rounded-lg border border-border-strong text-text-primary hover:bg-surface-subtle font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-base">directions</span>
+<span>Get Directions ↗</span>
+</a>
+<button class="h-11 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1.5" onclick="openContactDrawer()" type="button">
+<span class="material-symbols-outlined text-base">call</span>
+<span>Contact Nodal Desk</span>
+</button>
+</div>
+</div>
+<!-- APPLICATION PROCESS TIMELINE -->
+<div class="bg-surface-card rounded-xl p-6 border border-border-subtle shadow-sm">
+<div class="mb-4">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">How to proceed (Application Journey)</h3>
+<p class="font-caption text-caption text-text-secondary mt-0.5">
+              Follow this sequence to ensure zero-rejection routing.
+            </p>
+</div>
+<!-- Vertical Timeline Steps -->
+<div class="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-border-subtle">
+<!-- Step 1 -->
+<div class="relative">
+<span class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-status-success-bg"></span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-secondary font-bold">Step 01</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">Prepare &amp; certify documents</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                Gather 2 self-attested photocopies and keep DigiLocker copies ready for Aadhaar, Caste, and DPR machinery quotation.
+              </p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-surface-subtle"></span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-primary font-bold">Step 02</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">Initiate KVIC Online e-Portal Routing</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                Submit basic personal profile on the official PMEGP online portal designating <em>'State Bank of India, SME Park Street'</em> as preferred financing branch.
+              </p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-border-strong"></span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-text-muted font-bold">Step 03</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">Visit SBI SME Park Street Nodal Desk</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                Present your ALIGN Dossier and hardcopy documents directly to Officer Shri S. Chatterjee at Counter 04 for formal intake receipt.
+              </p>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<span class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-border-strong"></span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-text-muted font-bold">Step 04</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">DLTFC Committee Scrutiny</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                Branch forwards project to District Level Task Force Committee; technical field verification completed within 7–14 working days.
+              </p>
+</div>
+<!-- Step 5 -->
+<div class="relative">
+<span class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-border-strong"></span>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-text-muted font-bold">Step 05</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">Sanction &amp; Subsidy Escrow Release</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                Loan disbursed to machinery vendor; ₹42,000 (35% margin money) locked into 3-year term deposit escrow as per KVIC guidelines.
+              </p>
+</div>
+</div>
+<div class="mt-6 p-3 bg-surface-subtle rounded-lg text-text-muted text-xs">
+<span class="font-caption block">Procedures subject to State Level Bankers' Committee (SLBC) West Bengal guidelines. Confirm branch rules at intake.</span>
+</div>
+</div>
+<!-- "BEFORE YOU APPLY" TRUST & STATUTORY GOVERNANCE PANEL -->
+<div class="bg-status-warning-bg/60 border border-status-warning-text/20 rounded-xl p-5 text-status-warning-text">
+<div class="flex items-center gap-2 mb-2 font-label-md font-semibold text-status-warning-text">
+<span class="material-symbols-outlined text-xl">shield_person</span>
+<span>Before you apply: Statutory Governance</span>
+</div>
+<ul class="space-y-2 font-body-sm text-body-sm text-status-warning-text/90">
+<li class="flex items-start gap-2">
+<span class="mt-1 w-1.5 h-1.5 rounded-full bg-status-warning-text shrink-0"></span>
+<span><strong>Scheme eligibility does not guarantee loan sanction.</strong> Approval is subject to branch appraisal and business cashflow viability.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="mt-1 w-1.5 h-1.5 rounded-full bg-status-warning-text shrink-0"></span>
+<span><strong>Partner variations apply.</strong> Confirm latest local stamp duty or notarisation requirements with SBI Park Street before finalizing agreements.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="mt-1 w-1.5 h-1.5 rounded-full bg-status-warning-text shrink-0"></span>
+<span><strong>Zero Commission Guarantee:</strong> ALIGN is a public financial utility. We never charge fees, act as lending agents, or submit applications on your behalf.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- FINAL CLOSING CONFIRMATION BAR -->
+<section class="w-full bg-surface-subtle border-t border-border-subtle py-10 mb-20">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<span class="font-label-sm text-secondary uppercase tracking-wider font-semibold">Audit Check Complete</span>
+<h3 class="font-headline-md text-headline-md text-primary">You're ready to take the next step.</h3>
+<p class="font-body-md text-body-md text-text-secondary mt-1">
+          Keep this checklist handy, download your official dossier, and present it at SBI SME Park Street Counter 04.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+<button class="w-full sm:w-auto h-12 px-6 bg-primary text-on-primary font-label-md rounded-lg shadow-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-2" onclick="openPdfModal()" type="button">
+<span class="material-symbols-outlined text-xl">file_download</span>
+<span>Download Checklist PDF ↓</span>
+</button>
+<button class="w-full sm:w-auto h-12 px-5 bg-surface-card border border-border-strong text-text-primary font-label-md rounded-lg hover:bg-surface-subtle transition-colors flex items-center justify-center" onclick="alert('Navigating to Screen 4 Channel Partners...')" type="button">
+<span>Back to Partner Selection</span>
+</button>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE PDF EXPORT MODAL -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="pdf-modal">
+<div class="bg-surface-card w-full max-w-lg rounded-xl border border-border-subtle shadow-xl overflow-hidden animate-in fade-in zoom-in duration-200">
+<div class="p-6 border-b border-border-subtle flex items-center justify-between bg-surface-ivory">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-sm">A</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">ALIGN Statutory Dossier</h4>
+<p class="font-caption text-caption text-text-muted">Generated for: Tailoring Micro-Enterprise Expansion</p>
+</div>
+</div>
+<button class="text-text-muted hover:text-text-primary p-1 rounded-md" onclick="closePdfModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-4">
+<div class="p-4 bg-surface-subtle rounded-lg border border-border-subtle flex items-center justify-between">
+<div>
+<p class="font-label-sm text-text-muted">Dossier Reference ID</p>
+<p class="font-headline-sm text-[16px] text-text-primary font-mono font-bold">ALGN-WB-KOL-PMEGP-8832</p>
+<p class="font-caption text-caption text-text-secondary mt-1">Generated: Today • SLBC Batch Valid for 30 Days</p>
+</div>
+<!-- Barcode/QR Placeholder SVG -->
+<div class="w-16 h-16 bg-surface-card p-1.5 rounded border border-border-subtle flex items-center justify-center">
+<svg class="w-full h-full text-text-primary" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h4v4H2V2zm2 2h0v0h0zm14-2h4v4h-4V2zm2 2h0v0h0zM2 18h4v4H2v-4zm2 2h0v0h0zm10-10h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 4h2v2h-2v-2zm4-4h2v2h-2v-2zm-8-4h2v2h-2v-2zm4 0h2v2h-2v-2zm0-4h2v2h-2V6zm-4 0h2v2h-2V6z"></path>
+</svg>
+</div>
+</div>
+<div class="text-xs space-y-2 text-text-secondary">
+<p class="font-semibold text-text-primary">Included in this export package:</p>
+<div class="grid grid-cols-2 gap-2 text-[12px]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Form 10-A Intake Slip</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>DPR Machinery Template</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Bank Desk Routing Memo</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>Annexure III Subsidy Claim</span>
+</div>
+</div>
+</div>
+<div class="p-3 bg-status-info-bg text-status-info-text rounded-lg text-xs">
+          Take 2 hard copies directly to Officer Shri S. Chatterjee at SBI Park Street SME Desk.
+        </div>
+</div>
+<div class="p-4 bg-surface-subtle border-t border-border-subtle flex items-center justify-end gap-3">
+<button class="h-10 px-4 rounded-lg font-label-md text-label-md text-text-secondary hover:text-text-primary" onclick="closePdfModal()" type="button">
+          Cancel
+        </button>
+<button class="h-10 px-5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-2" onclick="triggerDownloadFeedback()" type="button">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Download PDF Package</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CONTACT DESK DRAWER / MODAL -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="contact-drawer">
+<div class="bg-surface-card w-full max-w-md rounded-xl border border-border-subtle shadow-xl overflow-hidden animate-in fade-in duration-200">
+<div class="p-5 border-b border-border-subtle flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-primary">SBI Park Street Nodal Desk</h4>
+<button class="text-text-muted hover:text-text-primary" onclick="closeContactDrawer()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-5 space-y-4">
+<div>
+<span class="font-label-sm text-text-muted uppercase">Authorized Officer</span>
+<p class="font-headline-sm text-[16px] text-text-primary">Shri Subhashish Chatterjee</p>
+<p class="font-caption text-text-secondary">Chief Manager (SME &amp; Public Linkages)</p>
+</div>
+<div class="p-3 bg-surface-subtle rounded-lg space-y-2 text-sm">
+<div class="flex items-center justify-between">
+<span class="text-text-secondary">Official Landline:</span>
+<span class="font-mono font-bold text-text-primary">033-2229-4501</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-secondary">Intake Window:</span>
+<span class="text-text-primary">11:00 AM – 03:00 PM</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-text-secondary">Desk Location:</span>
+<span class="text-text-primary">Mezzanine Floor, Counter 04</span>
+</div>
+</div>
+<p class="font-caption text-caption text-text-muted">
+          Quote your reference ID <strong>ALGN-WB-KOL-PMEGP-8832</strong> for prioritized institutional assistance under MSME priority sector lending.
+        </p>
+</div>
+<div class="p-4 bg-surface-subtle border-t border-border-subtle text-right">
+<button class="h-10 px-5 rounded-lg bg-primary text-on-primary font-label-md text-label-md" onclick="closeContactDrawer()" type="button">
+          Got it
+        </button>
+</div>
+</div>
+</div>
+<!-- PERSISTENT FLOATING AI WHAT-IF ASSISTANT (Fixed Centered Dock) -->
+<aside class="fixed bottom-6 inset-x-0 mx-auto w-[92%] max-w-[760px] z-40 transition-all duration-300">
+<div class="bg-surface-card/95 backdrop-blur-md rounded-2xl shadow-[0_12px_36px_rgba(27,54,93,0.12)] border border-border-strong overflow-hidden transition-all" id="ai-assistant-card">
+<!-- Collapsed Header / Input Bar -->
+<div class="p-3 sm:p-4 flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+</div>
+<div class="flex-1 min-w-0 relative">
+<input class="w-full bg-surface-subtle border-0 rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:ring-1 focus:ring-primary outline-none" id="ai-user-query" onkeydown="if(event.key === 'Enter') expandAiAssistant()" placeholder="Ask ALIGN about PMEGP documents or SBI Park Street..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-4 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors shrink-0" onclick="expandAiAssistant()" type="button">
+            Ask
+          </button>
+<button class="w-9 h-9 rounded-lg text-text-secondary hover:bg-surface-subtle flex items-center justify-center shrink-0" id="ai-toggle-btn" onclick="toggleAiAssistant()" title="Toggle Details" type="button">
+<span class="material-symbols-outlined text-xl" id="ai-toggle-icon">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Quick Chips Bar (Always visible or contextual) -->
+<div class="px-4 pb-3 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs">
+<span class="font-caption text-text-muted shrink-0">Common questions:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-text-secondary whitespace-nowrap transition-colors" onclick="setQuery('Can I apply without an income certificate?')" type="button">
+          Can I apply without an income certificate?
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-text-secondary whitespace-nowrap transition-colors" onclick="setQuery('What happens after DLTFC review?')" type="button">
+          What happens after DLTFC review?
+        </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-subtle hover:bg-surface-container text-text-secondary whitespace-nowrap transition-colors" onclick="setQuery('Is EDP training mandatory?')" type="button">
+          Is EDP training mandatory?
+        </button>
+</div>
+<!-- Expanded State (Institutional Explanation Drawer) -->
+<div class="hidden px-5 pb-5 pt-2 border-t border-border-subtle bg-surface-ivory/60 space-y-3" id="ai-expanded-content">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+</div>
+<div class="space-y-2 text-sm text-text-primary">
+<p class="font-body-md text-body-md leading-relaxed text-text-primary" id="ai-answer-text">
+              Based on official PMEGP Gazette guidelines, an Income Certificate or Self-Declaration attested by a revenue officer (BDO/SDO) is mandatory for claiming the 35% special category subsidy. For standard general category (25% subsidy), educational proof may suffice if loan is under ₹5 Lakh.
+            </p>
+<div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-border-subtle text-xs">
+<span class="font-caption text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+                Source: Official Scheme Gazette MSME/2024/PMEGP-Annexure III
+              </span>
+<a class="font-label-sm text-primary hover:underline flex items-center gap-0.5" href="#" onclick="alert('Displaying Gazette MSME/2024 clause excerpt in new tab...')">
+                View gazette clause ↗
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- TOAST NOTIFICATION FOR DOWNLOAD TRIGGER -->
+<div class="fixed top-24 right-6 z-50 bg-primary text-on-primary px-4 py-3 rounded-lg shadow-lg hidden items-center gap-2.5 text-sm" id="toast-notify">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+<span>ALIGN Dossier (PDF) generated successfully.</span>
+</div>
+<!-- INLINE CLIENT INTERACTION SCRIPT -->
+<script>
+    function updateDocCount() {
+      const checkboxes = document.querySelectorAll('.doc-check');
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) checkedCount++;
+      });
+      const counter = document.getElementById('doc-counter');
+      if (counter) {
+        counter.textContent = checkedCount + '/' + checkboxes.length + ' selected';
+        if (checkedCount === checkboxes.length) {
+          counter.className = "font-label-sm text-secondary bg-status-success-bg px-2.5 py-1 rounded-md";
+        } else {
+          counter.className = "font-label-sm text-status-warning-text bg-status-warning-bg px-2.5 py-1 rounded-md";
+        }
+      }
+    }
+
+    function openPdfModal() {
+      const modal = document.getElementById('pdf-modal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closePdfModal() {
+      const modal = document.getElementById('pdf-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function triggerDownloadFeedback() {
+      closePdfModal();
+      const toast = document.getElementById('toast-notify');
+      if (toast) {
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3500);
+      }
+    }
+
+    function openContactDrawer() {
+      const drawer = document.getElementById('contact-drawer');
+      if (drawer) drawer.classList.remove('hidden');
+    }
+
+    function closeContactDrawer() {
+      const drawer = document.getElementById('contact-drawer');
+      if (drawer) drawer.classList.add('hidden');
+    }
+
+    function toggleAiAssistant() {
+      const content = document.getElementById('ai-expanded-content');
+      const icon = document.getElementById('ai-toggle-icon');
+      if (content) {
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+          content.classList.remove('hidden');
+          if (icon) icon.textContent = 'expand_more';
+        } else {
+          content.classList.add('hidden');
+          if (icon) icon.textContent = 'expand_less';
+        }
+      }
+    }
+
+    function expandAiAssistant() {
+      const content = document.getElementById('ai-expanded-content');
+      const icon = document.getElementById('ai-toggle-icon');
+      if (content) {
+        content.classList.remove('hidden');
+        if (icon) icon.textContent = 'expand_more';
+      }
+    }
+
+    function setQuery(queryText) {
+      const input = document.getElementById('ai-user-query');
+      const answerText = document.getElementById('ai-answer-text');
+      if (input) input.value = queryText;
+      
+      if (queryText.includes('income certificate')) {
+        answerText.textContent = "Based on official PMEGP Gazette guidelines, an Income Certificate or Self-Declaration attested by a revenue officer (BDO/SDO) is mandatory for claiming the 35% special category subsidy. For standard general category (25% subsidy), educational proof may suffice if loan is under ₹5 Lakh.";
+      } else if (queryText.includes('DLTFC review')) {
+        answerText.textContent = "After the District Level Task Force Committee (DLTFC) technical scrutiny, your application is sanctioned in the online portal and forwarded back to SBI SME Park Street for final disbursement authorization within 7 working days.";
+      } else if (queryText.includes('EDP training')) {
+        answerText.textContent = "Yes, Entrepreneurship Development Programme (EDP) training of 5 to 10 days is mandatory prior to final loan disbursement, but can be completed online via the official portal after initial sanction.";
+      }
+      expandAiAssistant();
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-2xl"><div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg pb-space-xl border-b border-border-subtle"><div class="max-w-md"><div class="flex items-center gap-space-xs mb-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><p class="font-body-sm text-body-sm text-text-secondary">Making financial assistance easier to understand for marginalized entrepreneurs.</p></div><nav class="flex flex-wrap items-center gap-space-lg" data-active-classes="text-text-primary font-bold"><a aria-current="page" class="transition-colors text-text-primary font-bold" data-path="how-it-works" href="#">How it works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms</a></nav></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-caption text-caption text-text-muted">Source: Official scheme guidelines &amp; verified institutional frameworks.</p><p class="font-caption text-caption text-text-muted">© 2025 ALIGN Public Financial Initiative. All rights reserved.</p></div></div></footer></body></html>

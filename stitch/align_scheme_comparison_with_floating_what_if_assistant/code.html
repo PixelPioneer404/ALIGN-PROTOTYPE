@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f1f4f9", "border-strong": "#C8C0B5", "surface-container-highest": "#e0e3e8", "surface-container": "#ebeef3", "status-warning-bg": "#FEF7EC", "status-info-text": "#18426B", "primary": "#002046", "error-container": "#ffdad6", "status-error-text": "#991B1B", "inverse-surface": "#2d3135", "tertiary-fixed": "#d1e4fd", "primary-container": "#1b365d", "on-secondary": "#ffffff", "on-primary-fixed": "#001b3d", "border-subtle": "#E5DFD7", "primary-fixed-dim": "#aec7f7", "surface-card": "#FFFFFF", "tertiary-fixed-dim": "#b5c8e0", "inverse-on-surface": "#eef1f6", "on-secondary-container": "#337053", "on-primary": "#ffffff", "secondary-fixed-dim": "#95d4b2", "text-muted": "#7A828B", "text-secondary": "#57606A", "surface-tint": "#465f88", "text-primary": "#1E2227", "on-error-container": "#93000a", "on-primary-container": "#87a0cd", "background": "#f7f9ff", "primary-fixed": "#d6e3ff", "surface-subtle": "#F3EFEA", "on-surface-variant": "#44474e", "secondary-fixed": "#b0f1cd", "on-tertiary": "#ffffff", "surface-container-high": "#e5e8ee", "outline-variant": "#c4c6cf", "surface-ivory": "#FAF8F5", "on-surface": "#181c20", "outline": "#74777f", "inverse-primary": "#aec7f7", "surface-variant": "#e0e3e8", "status-success-text": "#1F5239", "surface": "#f7f9ff", "status-warning-text": "#8F5B10", "tertiary-container": "#24374a", "surface-container-lowest": "#ffffff", "status-error-bg": "#FDF2F2", "on-tertiary-container": "#8da0b7", "surface-bright": "#f7f9ff", "status-info-bg": "#EEF4FA", "tertiary": "#0d2234", "on-secondary-fixed-variant": "#0e5137", "status-success-bg": "#EDF6F0", "surface-dim": "#d7dadf", "secondary-container": "#b0f1cd", "on-background": "#181c20", "on-primary-fixed-variant": "#2e476f", "on-tertiary-fixed": "#081d2f", "secondary": "#2c694d", "on-tertiary-fixed-variant": "#36485c", "on-secondary-fixed": "#002113", "on-error": "#ffffff", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "1200px", "space-2xs": "0.25rem", "space-3xl": "4rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "space-xs": "0.5rem" }, "fontFamily": { "body-sm": [ "Manrope" ], "headline-lg-mobile": [ "Manrope" ], "display": [ "Manrope" ], "label-sm": [ "Manrope" ], "headline-sm": [ "Manrope" ], "caption": [ "Manrope" ], "body-md": [ "Manrope" ], "body-lg": [ "Manrope" ], "label-md": [ "Manrope" ], "display-mobile": [ "Manrope" ], "headline-lg": [ "Manrope" ], "financial-stat-lg": [ "Manrope" ], "headline-md": [ "Manrope" ], "financial-stat-md": [ "Manrope" ] }, "fontSize": { "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display": [ "44px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "caption": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "financial-stat-lg": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "financial-stat-md": [ "22px", { "lineHeight": "28px", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-ivory font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-ivory/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ALIGN Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="bg-surface-subtle text-text-primary font-label-md rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-subtle text-text-primary font-label-md rounded-lg" data-path="how-it-works" href="#">How it works</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center h-12 px-space-md rounded-lg font-label-md text-label-md text-text-primary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="sign-in" href="#">Sign in</a><a class="inline-flex items-center justify-center h-12 px-space-lg rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_2px_6px_rgba(33,37,41,0.03)] hover:bg-primary transition-colors" data-path="need-analysis" href="#">Find a Scheme</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface-ivory flex-1"><div class="flex flex-col w-full pb-32">
+<!-- Minimal Institutional Sub-Bar -->
+<section class="w-full bg-surface-card border-b border-border-subtle shadow-sm py-space-xs">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-wrap items-center justify-between gap-space-sm text-caption font-caption text-text-secondary">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-status-info-bg text-status-info-text font-semibold text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-status-info-text animate-pulse"></span>
+          Gazette Registry Active
+        </span>
+<span>Verified Public Schemes · FY 2024–25 Amortisation Framework</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="hidden sm:inline">Reference Node: #WB-KOL-8842</span>
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+          Zero Bias Mathematical Audit
+        </span>
+</div>
+</div>
+</section>
+<!-- Progress Flow & Header Section -->
+<section class="w-full pt-space-xl pb-space-lg">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col gap-space-lg">
+<!-- Stepper / Tracker -->
+<div class="w-full bg-surface-card p-space-md rounded-xl border border-border-subtle shadow-sm">
+<div class="flex items-center justify-between overflow-x-auto pb-2 sm:pb-0 gap-2">
+<!-- Step 1 -->
+<div class="flex items-center gap-2 text-secondary shrink-0">
+<span class="w-7 h-7 rounded-full bg-status-success-bg text-secondary flex items-center justify-center font-bold text-xs">✓</span>
+<span class="font-label-sm text-label-sm text-text-primary">01 Need</span>
+</div>
+<div class="h-0.5 flex-1 min-w-[20px] bg-secondary/30"></div>
+<!-- Step 2 -->
+<div class="flex items-center gap-2 text-secondary shrink-0">
+<span class="w-7 h-7 rounded-full bg-status-success-bg text-secondary flex items-center justify-center font-bold text-xs">✓</span>
+<span class="font-label-sm text-label-sm text-text-primary">02 Match</span>
+</div>
+<div class="h-0.5 flex-1 min-w-[20px] bg-primary"></div>
+<!-- Step 3 (Active) -->
+<div class="flex items-center gap-2 shrink-0">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs shadow-sm">03</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">03 Compare</span>
+<span class="hidden md:inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-primary-fixed text-on-primary-fixed">Active</span>
+</div>
+<div class="h-0.5 flex-1 min-w-[20px] bg-border-subtle"></div>
+<!-- Step 4 -->
+<div class="flex items-center gap-2 text-text-muted shrink-0">
+<span class="w-7 h-7 rounded-full bg-surface-subtle text-text-muted flex items-center justify-center font-bold text-xs">04</span>
+<span class="font-label-sm text-label-sm text-text-muted">04 Decide</span>
+</div>
+<div class="h-0.5 flex-1 min-w-[20px] bg-border-subtle"></div>
+<!-- Step 5 -->
+<div class="flex items-center gap-2 text-text-muted shrink-0">
+<span class="w-7 h-7 rounded-full bg-surface-subtle text-text-muted flex items-center justify-center font-bold text-xs">05</span>
+<span class="font-label-sm text-label-sm text-text-muted">05 Apply</span>
+</div>
+</div>
+</div>
+<!-- Main Headline Block -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="max-w-3xl space-y-space-xs">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-subtle border border-border-subtle text-text-secondary font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>SCHEME COMPARISON · STEP 3 OF 5</span>
+</div>
+<h1 class="font-display text-display text-text-primary tracking-tight">
+            Compare your options before you decide.
+          </h1>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+            See how your loan amount and repayment choices affect each eligible scheme. Adjust the numbers below to inspect actual monthly EMI and total interest liabilities deterministically.
+          </p>
+</div>
+<div class="shrink-0">
+<span class="inline-flex items-center gap-2 px-space-md py-space-xs rounded-lg bg-status-success-bg text-status-success-text font-label-md text-label-md border border-secondary/20">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+            3 eligible schemes selected
+          </span>
+</div>
+</div>
+<!-- User Profile Snapshot Strip -->
+<div class="w-full bg-surface-card rounded-lg border border-border-subtle p-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm flex-wrap text-body-sm font-body-sm text-text-secondary">
+<span class="font-semibold text-text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">person_check</span>
+            Active Profile:
+          </span>
+<span class="bg-surface-subtle px-2.5 py-1 rounded font-medium text-text-primary">Tailoring Micro-enterprise</span>
+<span class="text-text-muted">·</span>
+<span>Target ₹1,20,000 funding</span>
+<span class="text-text-muted">·</span>
+<span>Annual Revenue ₹3,00,000</span>
+<span class="text-text-muted">·</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">pin_drop</span>
+            Kolkata, West Bengal
+          </span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary hover:underline self-start md:self-auto py-1" type="button">
+<span>Edit requirement</span>
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Universal Interactive Financial Control Panel -->
+<section class="w-full py-space-sm">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="w-full bg-surface-card border border-border-subtle rounded-xl p-space-lg shadow-sm">
+<!-- Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b border-border-subtle gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+              Adjust your financing parameters
+            </h2>
+<p class="font-body-sm text-body-sm text-text-secondary">
+              Change the amount or repayment period to see how statutory options rebalance instantaneously.
+            </p>
+</div>
+<button class="inline-flex items-center gap-1 px-space-sm py-1.5 rounded-lg border border-border-subtle text-text-secondary hover:text-text-primary hover:bg-surface-subtle text-label-sm font-label-sm transition-colors self-start sm:self-auto" id="btn-reset" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+            Reset to default (₹1.20L / 3Y)
+          </button>
+</div>
+<!-- Slider Controls Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl pt-space-lg">
+<!-- Loan Amount Slider -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-primary" for="loan-slider">
+                Required Loan Amount
+              </label>
+<div class="flex items-center gap-1 bg-surface-subtle px-3 py-1 rounded-lg border border-border-subtle">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold" id="display-loan-text">₹1,20,000</span>
+</div>
+</div>
+<input class="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none" id="loan-slider" max="500000" min="50000" step="5000" type="range" value="120000"/>
+<!-- Range Boundary + Quick Buttons -->
+<div class="flex items-center justify-between text-caption font-caption text-text-muted pt-1">
+<span>Min: ₹50,000</span>
+<span>Baseline: ₹1,20,000</span>
+<span>Max: ₹5,00,000</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap pt-2">
+<span class="text-caption font-caption text-text-secondary">Quick Select:</span>
+<button class="quick-loan-btn px-2.5 py-1 rounded border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-amount="80000" type="button">₹80,000</button>
+<button class="quick-loan-btn px-2.5 py-1 rounded border border-primary text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed font-semibold" data-amount="120000" type="button">₹1,20,000</button>
+<button class="quick-loan-btn px-2.5 py-1 rounded border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-amount="200000" type="button">₹2,00,000</button>
+<button class="quick-loan-btn px-2.5 py-1 rounded border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-amount="350000" type="button">₹3,50,000</button>
+</div>
+</div>
+<!-- Repayment Tenure Slider -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-primary" for="tenure-slider">
+                Repayment Tenure
+              </label>
+<div class="flex items-center gap-1 bg-surface-subtle px-3 py-1 rounded-lg border border-border-subtle">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold" id="display-tenure-text">3 Years (36 mo)</span>
+</div>
+</div>
+<input class="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none" id="tenure-slider" max="7" min="1" step="1" type="range" value="3"/>
+<!-- Tenure Quick Selection Pills -->
+<div class="flex items-center justify-between gap-1 pt-2">
+<button class="tenure-pill flex-1 py-1.5 rounded border border-border-subtle font-label-sm text-label-sm text-text-secondary hover:bg-surface-subtle text-center transition-colors" data-years="2" type="button">2 Yrs</button>
+<button class="tenure-pill flex-1 py-1.5 rounded border border-primary bg-primary-fixed text-on-primary-fixed font-bold font-label-sm text-label-sm text-center transition-colors" data-years="3" type="button">3 Yrs</button>
+<button class="tenure-pill flex-1 py-1.5 rounded border border-border-subtle font-label-sm text-label-sm text-text-secondary hover:bg-surface-subtle text-center transition-colors" data-years="4" type="button">4 Yrs</button>
+<button class="tenure-pill flex-1 py-1.5 rounded border border-border-subtle font-label-sm text-label-sm text-text-secondary hover:bg-surface-subtle text-center transition-colors" data-years="5" type="button">5 Yrs</button>
+<button class="tenure-pill flex-1 py-1.5 rounded border border-border-subtle font-label-sm text-label-sm text-text-secondary hover:bg-surface-subtle text-center transition-colors" data-years="7" type="button">7 Yrs</button>
+</div>
+<p class="font-caption text-caption text-text-muted pt-1">
+              * Longer tenure reduces monthly EMI obligation but marginally increases overall cumulative interest.
+            </p>
+</div>
+</div>
+<!-- Real-Time Scenario Bar & Gazette Notice -->
+<div class="mt-space-lg p-space-sm bg-surface-ivory rounded-lg border border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-text-primary">
+<span class="material-symbols-outlined text-secondary text-[20px]">sync_alt</span>
+<span>Current simulation applies to all 3 schemes synchronously: 
+              <strong class="text-primary font-bold" id="summary-scenario-text">₹1,20,000 across 3 Years (36 months)</strong>
+</span>
+</div>
+<div class="text-caption font-caption text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">balance</span>
+            Official Gazette Statutory Amortisation
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Side-by-Side Scheme Comparison (3-Column Responsive Grid) -->
+<section class="w-full py-space-lg">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">
+            How the options compare
+          </h2>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            Deterministic evaluation tailored to your validated tailoring micro-enterprise specifications.
+          </p>
+</div>
+<span class="hidden md:inline-flex text-caption font-caption text-text-muted bg-surface-card px-3 py-1.5 rounded border border-border-subtle">
+          Sorted by: Comprehensive Fit Index
+        </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- CARD 1: PMEGP (RECOMMENDED TOP FIT) -->
+<div class="bg-surface-card rounded-xl border-2 border-secondary shadow-md flex flex-col justify-between transition-all duration-200 relative overflow-hidden" id="card-pmegp">
+<div class="absolute top-0 inset-x-0 h-1.5 bg-secondary"></div>
+<div class="p-space-lg space-y-space-md">
+<!-- Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-bold border border-secondary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">recommend</span>
+                RECOMMENDED · TOP FIT
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm border border-border-subtle">
+                Subsidy 15%–35%
+              </span>
+</div>
+<!-- Title & Origin -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                PMEGP
+              </h3>
+<p class="font-label-sm text-label-sm text-text-secondary">
+                Prime Minister Employment Generation Programme
+              </p>
+<p class="text-caption font-caption text-text-muted mt-0.5">
+                Central Sector Scheme · Credit-Linked Capital Subsidy
+              </p>
+</div>
+<!-- Financial Metrics Box -->
+<div class="bg-surface-ivory rounded-lg p-space-md border border-border-subtle space-y-space-xs">
+<div class="flex items-baseline justify-between border-b border-border-subtle pb-2">
+<span class="font-label-sm text-label-sm text-text-secondary">Estimated Monthly EMI</span>
+<div class="text-right">
+<span class="font-financial-stat-lg text-financial-stat-lg text-primary font-bold" id="pmegp-emi">₹3,760</span>
+<span class="font-caption text-caption text-text-muted">/mo</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Repayment</span>
+<span class="font-label-md text-label-md text-text-primary font-bold" id="pmegp-total">₹1,35,360</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Interest</span>
+<span class="font-label-md text-label-md text-text-primary font-bold" id="pmegp-interest">₹15,360</span>
+</div>
+</div>
+<div class="pt-1 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-text-muted">Statutory Interest Rate</span>
+<span class="font-bold text-secondary">8.0% p.a. (Concessional)</span>
+</div>
+</div>
+<!-- Warning Container (Default Hidden) -->
+<div class="hidden p-2 rounded bg-status-warning-bg text-status-warning-text font-caption text-caption border border-status-warning-text/20" id="pmegp-warning"></div>
+<!-- Key Scheme Features Checklist -->
+<div class="space-y-2 text-body-sm font-body-sm">
+<h4 class="font-label-sm text-label-sm text-text-primary font-bold uppercase tracking-wider">Statutory Framework:</h4>
+<ul class="space-y-1.5 text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span><strong>Max Loan Ceiling:</strong> ₹50 Lakh (Fits comfortably)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span><strong>Tenure Limit:</strong> Up to 7 Years</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">redeem</span>
+<span><strong>Capital Grant:</strong> Up to ₹42,000 non-repayable subsidy</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">hourglass_top</span>
+<span><strong>Moratorium:</strong> 6-month repayment holiday on principal</span>
+</li>
+</ul>
+</div>
+<!-- Verified Fit Checklist -->
+<div class="p-space-sm rounded-lg bg-status-success-bg/60 border border-secondary/20 text-body-sm font-body-sm space-y-1">
+<div class="flex items-center gap-1.5 text-status-success-text font-semibold text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Verified Tailoring Alignment
+              </div>
+<p class="text-caption font-caption text-status-success-text">
+                Sewing machine procurement &amp; raw fabrics fully recognized under manufacturing category. No collateral required.
+              </p>
+</div>
+</div>
+<!-- Card Bottom Action -->
+<div class="p-space-lg pt-0 space-y-2">
+<button class="btn-select-scheme w-full py-3 px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-sm" data-scheme="PMEGP" type="button">
+<span>Select this scheme</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full py-1.5 text-center text-caption font-caption text-primary hover:underline" type="button">
+              View official gazette blueprint ↗
+            </button>
+</div>
+</div>
+<!-- CARD 2: UDYAM NIDHI YOJANA (STATE CLUSTER) -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between transition-all duration-200 hover:border-border-strong" id="card-udyam">
+<div class="p-space-lg space-y-space-md">
+<!-- Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-status-info-bg text-status-info-text font-label-sm text-label-sm font-semibold border border-status-info-text/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hub</span>
+                Eligible · State Cluster
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm border border-border-subtle">
+                Fast Clearance
+              </span>
+</div>
+<!-- Title & Origin -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                Udyam Nidhi Yojana
+              </h3>
+<p class="font-label-sm text-label-sm text-text-secondary">
+                West Bengal Micro-Enterprise Directorate
+              </p>
+<p class="text-caption font-caption text-text-muted mt-0.5">
+                Targeted District Cooperative Working Capital
+              </p>
+</div>
+<!-- Financial Metrics Box -->
+<div class="bg-surface-ivory rounded-lg p-space-md border border-border-subtle space-y-space-xs">
+<div class="flex items-baseline justify-between border-b border-border-subtle pb-2">
+<span class="font-label-sm text-label-sm text-text-secondary">Estimated Monthly EMI</span>
+<div class="text-right">
+<span class="font-financial-stat-lg text-financial-stat-lg text-text-primary font-bold" id="udyam-emi">₹4,043</span>
+<span class="font-caption text-caption text-text-muted">/mo</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Repayment</span>
+<span class="font-label-md text-label-md text-text-primary font-bold" id="udyam-total">₹1,45,548</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Interest</span>
+<span class="font-label-md text-label-md text-text-primary font-bold" id="udyam-interest">₹25,548</span>
+</div>
+</div>
+<div class="pt-1 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-text-muted">Statutory Interest Rate</span>
+<span class="font-bold text-text-primary">13.0% p.a. (Standard)</span>
+</div>
+</div>
+<!-- Warning Box (Triggered when tenure > 5 yrs or amount > 4.5L) -->
+<div class="hidden p-2 rounded bg-status-warning-bg text-status-warning-text font-caption text-caption border border-status-warning-text/20" id="udyam-warning">
+              Tenure adjusted to scheme maximum (5 Years).
+            </div>
+<!-- Key Scheme Features Checklist -->
+<div class="space-y-2 text-body-sm font-body-sm">
+<h4 class="font-label-sm text-label-sm text-text-primary font-bold uppercase tracking-wider">Statutory Framework:</h4>
+<ul class="space-y-1.5 text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span><strong>Max Loan Ceiling:</strong> ₹4.50 Lakh</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">check_circle</span>
+<span><strong>Tenure Limit:</strong> Up to 5 Years maximum</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">bolt</span>
+<span><strong>Disbursement Speed:</strong> 7–10 days via local WB cooperative</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">hourglass_top</span>
+<span><strong>Moratorium:</strong> 3-month grace window</span>
+</li>
+</ul>
+</div>
+<!-- Verified Fit Note -->
+<div class="p-space-sm rounded-lg bg-surface-subtle border border-border-subtle text-body-sm font-body-sm space-y-1">
+<div class="flex items-center gap-1.5 text-text-primary font-semibold text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">store</span>
+                Kolkata Urban Cluster Priority
+              </div>
+<p class="text-caption font-caption text-text-secondary">
+                Higher interest profile balanced by rapid turnaround and minimal documentation cycles at civic cooperative branches.
+              </p>
+</div>
+</div>
+<!-- Card Bottom Action -->
+<div class="p-space-lg pt-0 space-y-2">
+<button class="btn-select-scheme w-full py-3 px-space-md rounded-lg border border-border-strong text-text-primary font-label-md text-label-md font-semibold hover:bg-surface-subtle transition-colors flex items-center justify-center gap-2" data-scheme="Udyam Nidhi" type="button">
+<span>Select this scheme</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full py-1.5 text-center text-caption font-caption text-primary hover:underline" type="button">
+              View official gazette blueprint ↗
+            </button>
+</div>
+</div>
+<!-- CARD 3: MICRO FINANCE (ARTISAN SPECIAL WINDOW) -->
+<div class="bg-surface-card rounded-xl border border-border-subtle shadow-sm flex flex-col justify-between transition-all duration-200 hover:border-border-strong" id="card-micro">
+<div class="p-space-lg space-y-space-md">
+<!-- Badges -->
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-status-success-bg text-status-success-text font-label-sm text-label-sm font-semibold border border-secondary/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">percent</span>
+                Eligible · Lowest Interest
+              </span>
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-label-sm border border-border-subtle">
+                NBCFDC Special
+              </span>
+</div>
+<!-- Title & Origin -->
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                Micro Finance Scheme
+              </h3>
+<p class="font-label-sm text-label-sm text-text-secondary">
+                National Backward Classes FDC · Artisan Window
+              </p>
+<p class="text-caption font-caption text-text-muted mt-0.5">
+                Targeted Subsidized Craft &amp; Micro-Credit
+              </p>
+</div>
+<!-- Financial Metrics Box -->
+<div class="bg-surface-ivory rounded-lg p-space-md border border-border-subtle space-y-space-xs">
+<div class="flex items-baseline justify-between border-b border-border-subtle pb-2">
+<span class="font-label-sm text-label-sm text-text-secondary">Estimated Monthly EMI</span>
+<div class="text-right">
+<span class="font-financial-stat-lg text-financial-stat-lg text-secondary font-bold" id="micro-emi">₹3,678</span>
+<span class="font-caption text-caption text-text-muted">/mo</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Repayment</span>
+<span class="font-label-md text-label-md text-secondary font-bold" id="micro-total">₹1,32,408</span>
+</div>
+<div>
+<span class="font-caption text-caption text-text-muted block">Total Interest</span>
+<span class="font-label-md text-label-md text-secondary font-bold" id="micro-interest">₹12,408</span>
+</div>
+</div>
+<div class="pt-1 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-text-muted">Statutory Interest Rate</span>
+<span class="font-bold text-secondary">6.5% p.a. (Subsidized)</span>
+</div>
+</div>
+<!-- Dynamic Warning Box for Scheme Caps -->
+<div class="hidden p-2 rounded bg-status-warning-bg text-status-warning-text font-caption text-caption border border-status-warning-text/20" id="micro-warning">
+<!-- Dynamically populated via JS -->
+</div>
+<!-- Key Scheme Features Checklist -->
+<div class="space-y-2 text-body-sm font-body-sm">
+<h4 class="font-label-sm text-label-sm text-text-primary font-bold uppercase tracking-wider">Statutory Framework:</h4>
+<ul class="space-y-1.5 text-text-secondary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">verified</span>
+<span><strong>Max Loan Ceiling:</strong> ₹1.25 Lakh strictly capped</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">schedule</span>
+<span><strong>Tenure Limit:</strong> Up to 3 Years (36 months)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">savings</span>
+<span><strong>Cost:</strong> Lowest total interest outlay of all programs</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0">hourglass_top</span>
+<span><strong>Moratorium:</strong> 3-month quarterly transition buffer</span>
+</li>
+</ul>
+</div>
+<!-- Constraint Note -->
+<div class="p-space-sm rounded-lg bg-surface-subtle border border-border-subtle text-body-sm font-body-sm space-y-1">
+<div class="flex items-center gap-1.5 text-text-primary font-semibold text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-text-muted">info</span>
+                Ceiling Notice
+              </div>
+<p class="text-caption font-caption text-text-secondary">
+                Your ₹1,20,000 requirement fits precisely within the ₹1.25L cap. If your requirement grows, consider PMEGP.
+              </p>
+</div>
+</div>
+<!-- Card Bottom Action -->
+<div class="p-space-lg pt-0 space-y-2">
+<button class="btn-select-scheme w-full py-3 px-space-md rounded-lg border border-border-strong text-text-primary font-label-md text-label-md font-semibold hover:bg-surface-subtle transition-colors flex items-center justify-center gap-2" data-scheme="Micro Finance" id="btn-select-micro" type="button">
+<span>Select this scheme</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full py-1.5 text-center text-caption font-caption text-primary hover:underline" type="button">
+              View official gazette blueprint ↗
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Decision Support Advisory Note -->
+<section class="w-full py-space-md">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="p-space-lg bg-surface-card border border-border-subtle rounded-xl shadow-sm flex flex-col md:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-status-warning-bg border border-status-warning-text/20 flex items-center justify-center text-status-warning-text shrink-0">
+<span class="material-symbols-outlined text-[24px]">lightbulb</span>
+</div>
+<div class="space-y-1 flex-1">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">
+            Public Benefit Neutrality Note
+          </h3>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            There is no single "correct" choice for every enterprise. While the <strong>Micro Finance Scheme</strong> yields the absolute lowest lifetime interest (<span id="advice-lowest-interest">₹12,408</span>), <strong>PMEGP</strong> delivers a capital subsidy grant of up to 35% (up to ₹42,000) that is non-repayable, while accommodating future credit limit upgrades as your workshop expands. <strong>Udyam Nidhi</strong> delivers the most rapid cooperative branch turnaround.
+          </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Scheme Selection Modal / Drawer Feedback Scrim (Toggled via JS) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4" id="selection-modal">
+<div class="w-full max-w-lg bg-surface-card rounded-2xl border border-border-strong shadow-xl p-space-xl space-y-space-md animate-in fade-in zoom-in duration-150">
+<div class="w-12 h-12 rounded-full bg-status-success-bg text-secondary flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[28px]">task_alt</span>
+</div>
+<div class="text-center space-y-1">
+<span class="text-caption font-caption text-text-muted uppercase tracking-wider font-semibold">Phase 3 Complete</span>
+<h3 class="font-headline-md text-headline-md text-text-primary">
+          Scheme Successfully Selected
+        </h3>
+<p class="font-body-sm text-body-sm text-text-secondary" id="modal-scheme-desc">
+          You have selected PMEGP for your tailoring micro-enterprise requirement of ₹1,20,000 over 3 years.
+        </p>
+</div>
+<div class="p-space-sm bg-surface-ivory rounded-lg border border-border-subtle text-body-sm font-body-sm space-y-1 text-text-secondary">
+<div class="flex items-center justify-between text-text-primary font-semibold">
+<span>Targeted Assistance:</span>
+<span id="modal-scheme-name">PMEGP</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Configured Monthly EMI:</span>
+<strong class="text-primary font-bold" id="modal-scheme-emi">₹3,760 /mo</strong>
+</div>
+<div class="flex items-center justify-between">
+<span>Next Step (Phase 4):</span>
+<span class="text-secondary font-semibold">Partner Bank &amp; Desk Discovery</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-2">
+<button class="flex-1 py-3 rounded-lg border border-border-subtle text-text-secondary font-label-md text-label-md hover:bg-surface-subtle transition-colors" id="modal-btn-back" type="button">
+          Revise Comparison
+        </button>
+<button class="flex-1 py-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1" id="modal-btn-proceed" type="button">
+<span>Continue to Step 4</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- PERSISTENT FLOATING WHAT-IF AI COPILOT DOCK -->
+<aside aria-label="ALIGN What-If Simulation Assistant" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[680px] px-4">
+<div class="w-full bg-[#ffffff]/95 backdrop-blur-md border border-[#E5E3DC] rounded-2xl shadow-xl transition-all duration-300 ease-out overflow-hidden flex flex-col" id="copilot-dock">
+<!-- Collapsed View Suggestion Chips -->
+<div class="px-3.5 pt-3 pb-1 flex items-center gap-1.5 overflow-x-auto no-scrollbar transition-all duration-200" id="dock-chips">
+<button class="dock-chip-btn shrink-0 text-caption font-caption px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary hover:text-text-primary hover:bg-[#eae4dc] border border-border-subtle transition-colors flex items-center gap-1" data-query="What if I reduce the loan amount to ₹80,000?" type="button">
+<span class="material-symbols-outlined text-[13px] text-primary">search_spark</span>
+<span>What if I borrow ₹80,000?</span>
+</button>
+<button class="dock-chip-btn shrink-0 text-caption font-caption px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary hover:text-text-primary hover:bg-[#eae4dc] border border-border-subtle transition-colors flex items-center gap-1" data-query="What if I repay over 5 years?" type="button">
+<span class="material-symbols-outlined text-[13px] text-primary">schedule</span>
+<span>What if I repay over 5 years?</span>
+</button>
+<button class="dock-chip-btn shrink-0 text-caption font-caption px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary hover:text-text-primary hover:bg-[#eae4dc] border border-border-subtle transition-colors flex items-center gap-1" data-query="Which option has the lowest total repayment?" type="button">
+<span class="material-symbols-outlined text-[13px] text-secondary">savings</span>
+<span>Which option has lowest repayment?</span>
+</button>
+</div>
+<!-- Expanded State Header & Body (Hidden by default) -->
+<div class="hidden flex-col transition-all duration-300" id="dock-expanded-content">
+<!-- Expanded Header -->
+<div class="px-4 py-2.5 bg-surface-ivory/80 border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">ALIGN What-If Scenario</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-secondary/10 text-secondary border border-secondary/20">Rule-grounded simulation</span>
+</div>
+<button aria-label="Close scenario" class="p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface-subtle transition-colors" id="btn-close-dock" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Expanded Scrollable Body -->
+<div class="p-4 space-y-3 max-h-[310px] overflow-y-auto text-body-sm font-body-sm">
+<!-- User Query Bubble -->
+<div class="flex justify-end">
+<div class="bg-primary text-on-primary px-3.5 py-2 rounded-2xl rounded-tr-xs text-body-sm max-w-[85%] shadow-xs" id="dock-user-text">
+            What if I reduce the loan amount to ₹80,000?
+          </div>
+</div>
+<!-- ALIGN Copilot Answer -->
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary/10 text-primary shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<div class="flex-1 space-y-2.5">
+<p class="text-text-secondary leading-relaxed bg-surface-ivory p-3 rounded-xl border border-border-subtle/80" id="dock-ai-narrative">
+              Reducing your loan amount to <strong>₹80,000</strong> lowers the monthly repayment across all three options. The <strong>Micro Finance Scheme</strong> remains the lowest-cost option by total repayment, while <strong>PMEGP</strong> provides a 35% non-repayable capital subsidy and larger headroom.
+            </p>
+<!-- Delta Comparison Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+<div class="p-2.5 rounded-lg bg-surface-subtle border border-border-subtle">
+<div class="text-caption font-caption text-text-muted">PMEGP (8.0%)</div>
+<div class="text-label-sm font-label-sm font-bold text-text-primary mt-0.5">₹3,760 → ₹2,507 <span class="text-[11px] font-normal text-text-muted">/mo</span></div>
+<div class="text-caption font-caption text-secondary font-semibold flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+<span>Save ₹1,253 /mo</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-subtle border border-border-subtle">
+<div class="text-caption font-caption text-text-muted">Udyam Nidhi (13.0%)</div>
+<div class="text-label-sm font-label-sm font-bold text-text-primary mt-0.5">₹4,043 → ₹2,696 <span class="text-[11px] font-normal text-text-muted">/mo</span></div>
+<div class="text-caption font-caption text-secondary font-semibold flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+<span>Save ₹1,347 /mo</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-status-success-bg/70 border border-secondary/25">
+<div class="text-caption font-caption text-status-success-text font-semibold">Micro Finance (6.5%)</div>
+<div class="text-label-sm font-label-sm font-bold text-secondary mt-0.5">₹3,678 → ₹2,452 <span class="text-[11px] font-normal text-text-muted">/mo</span></div>
+<div class="text-caption font-caption text-secondary font-bold flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+<span>Save ₹1,226 /mo</span>
+</div>
+</div>
+</div>
+<!-- Context Notice & Apply Action -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1">
+<span class="text-caption font-caption text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>See the comparison above to notice the changes.</span>
+</span>
+<button class="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold hover:bg-secondary/90 transition-colors shadow-xs" id="btn-apply-dock" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Apply this scenario to calculator</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Universal Prompt Entry (Present in both states) -->
+<div class="p-2 sm:p-2.5 border-t border-border-subtle bg-surface-card">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined text-primary text-[20px] absolute left-3 top-1/2 -translate-y-1/2">auto_awesome</span>
+<input class="w-full h-11 pl-9 pr-3 rounded-xl bg-surface-ivory border border-border-subtle text-body-sm font-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-primary focus:bg-surface-card transition-all" id="dock-input" placeholder="Ask ALIGN to explore a what-if scenario..." type="text"/>
+</div>
+<button aria-label="Simulate scenario" class="h-11 px-3.5 sm:px-4 rounded-xl bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors shrink-0 flex items-center justify-center gap-1 shadow-xs" id="dock-send" type="button">
+<span class="hidden sm:inline">Explore</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<p class="text-[11px] leading-tight text-text-muted pt-1.5 px-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-text-muted">verified</span>
+<span>ALIGN uses AI to understand your question. Financial figures are calculated deterministically using official gazette terms.</span>
+</p>
+</div>
+</div>
+</aside>
+<script>
+  (function initAlignComparison() {
+    // Statutory Scheme Parameters
+    const SCHEMES = {
+      pmegp: {
+        name: "PMEGP (Prime Minister Employment Generation Programme)",
+        rate: 8.0, // percent per annum
+        maxTenure: 7, // years
+        maxLoan: 5000000, // ₹50 Lakh
+      },
+      udyam: {
+        name: "Udyam Nidhi Yojana",
+        rate: 13.0,
+        maxTenure: 5, // years
+        maxLoan: 450000, // ₹4.5 Lakh
+      },
+      micro: {
+        name: "Micro Finance Scheme (NBCFDC)",
+        rate: 6.5,
+        maxTenure: 3, // years
+        maxLoan: 125000, // ₹1.25 Lakh
+      }
+    };
+
+    // State
+    let currentLoan = 120000;
+    let currentTenure = 3; // years
+
+    // DOM Elements
+    const loanSlider = document.getElementById('loan-slider');
+    const tenureSlider = document.getElementById('tenure-slider');
+    const displayLoanText = document.getElementById('display-loan-text');
+    const displayTenureText = document.getElementById('display-tenure-text');
+    const summaryScenarioText = document.getElementById('summary-scenario-text');
+    const adviceLowestInterest = document.getElementById('advice-lowest-interest');
+
+    // Cards Elements
+    const pmegpEmi = document.getElementById('pmegp-emi');
+    const pmegpTotal = document.getElementById('pmegp-total');
+    const pmegpInterest = document.getElementById('pmegp-interest');
+    const pmegpWarning = document.getElementById('pmegp-warning');
+
+    const udyamEmi = document.getElementById('udyam-emi');
+    const udyamTotal = document.getElementById('udyam-total');
+    const udyamInterest = document.getElementById('udyam-interest');
+    const udyamWarning = document.getElementById('udyam-warning');
+
+    const microEmi = document.getElementById('micro-emi');
+    const microTotal = document.getElementById('micro-total');
+    const microInterest = document.getElementById('micro-interest');
+    const microWarning = document.getElementById('micro-warning');
+    const btnSelectMicro = document.getElementById('btn-select-micro');
+
+    // Floating Dock Elements
+    const dockExpandedContent = document.getElementById('dock-expanded-content');
+    const dockChips = document.getElementById('dock-chips');
+    const dockInput = document.getElementById('dock-input');
+    const dockSend = document.getElementById('dock-send');
+    const btnCloseDock = document.getElementById('btn-close-dock');
+    const btnApplyDock = document.getElementById('btn-apply-dock');
+    const dockUserText = document.getElementById('dock-user-text');
+
+    // Modal Elements
+    const modal = document.getElementById('selection-modal');
+    const modalSchemeName = document.getElementById('modal-scheme-name');
+    const modalSchemeDesc = document.getElementById('modal-scheme-desc');
+    const modalSchemeEmi = document.getElementById('modal-scheme-emi');
+    const modalBtnBack = document.getElementById('modal-btn-back');
+    const modalBtnProceed = document.getElementById('modal-btn-proceed');
+
+    // Standard Deterministic EMI Formula: E = P * r * (1+r)^n / ((1+r)^n - 1)
+    function calculateEMI(principal, annualRate, tenureYears) {
+      if (principal <= 0 || tenureYears <= 0) return { emi: 0, total: 0, interest: 0 };
+      const r = (annualRate / 100) / 12;
+      const n = tenureYears * 12;
+      const emi = Math.round((principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1));
+      const total = emi * n;
+      const interest = total - principal;
+      return { emi, total, interest, months: n };
+    }
+
+    function formatINR(val) {
+      return '₹' + Number(val).toLocaleString('en-IN');
+    }
+
+    // Recalculate and update the UI
+    function render() {
+      // Sliders label updates
+      displayLoanText.innerText = formatINR(currentLoan);
+      displayTenureText.innerText = `${currentTenure} ${currentTenure === 1 ? 'Year' : 'Years'} (${currentTenure * 12} mo)`;
+      summaryScenarioText.innerText = `${formatINR(currentLoan)} across ${currentTenure} ${currentTenure === 1 ? 'Year' : 'Years'} (${currentTenure * 12} months)`;
+
+      // 1. PMEGP calculations
+      const pmegpRes = calculateEMI(currentLoan, SCHEMES.pmegp.rate, currentTenure);
+      pmegpEmi.innerText = formatINR(pmegpRes.emi);
+      pmegpTotal.innerText = formatINR(pmegpRes.total);
+      pmegpInterest.innerText = formatINR(pmegpRes.interest);
+      if (currentTenure > SCHEMES.pmegp.maxTenure) {
+        pmegpWarning.classList.remove('hidden');
+        pmegpWarning.innerText = `Exceeds PMEGP maximum tenure cap of ${SCHEMES.pmegp.maxTenure} years.`;
+      } else {
+        pmegpWarning.classList.add('hidden');
+      }
+
+      // 2. Udyam Nidhi calculations (Cap tenure at 5 years)
+      const udyamEffectiveTenure = Math.min(currentTenure, SCHEMES.udyam.maxTenure);
+      const udyamRes = calculateEMI(currentLoan, SCHEMES.udyam.rate, udyamEffectiveTenure);
+      udyamEmi.innerText = formatINR(udyamRes.emi);
+      udyamTotal.innerText = formatINR(udyamRes.total);
+      udyamInterest.innerText = formatINR(udyamRes.interest);
+
+      if (currentTenure > SCHEMES.udyam.maxTenure) {
+        udyamWarning.classList.remove('hidden');
+        udyamWarning.innerText = `Exceeds 5-yr scheme ceiling. Calculated using max allowable 5-year tenure.`;
+      } else if (currentLoan > SCHEMES.udyam.maxLoan) {
+        udyamWarning.classList.remove('hidden');
+        udyamWarning.innerText = `Loan exceeds scheme maximum ceiling of ₹4.50 Lakh.`;
+      } else {
+        udyamWarning.classList.add('hidden');
+      }
+
+      // 3. Micro Finance calculations (Cap tenure at 3 years, cap loan at 1.25L)
+      const microEffectiveTenure = Math.min(currentTenure, SCHEMES.micro.maxTenure);
+      const microEffectiveLoan = Math.min(currentLoan, SCHEMES.micro.maxLoan);
+      const microRes = calculateEMI(microEffectiveLoan, SCHEMES.micro.rate, microEffectiveTenure);
+      microEmi.innerText = formatINR(microRes.emi);
+      microTotal.innerText = formatINR(microRes.total);
+      microInterest.innerText = formatINR(microRes.interest);
+
+      let microWarnings = [];
+      if (currentLoan > SCHEMES.micro.maxLoan) {
+        microWarnings.push(`Exceeds ₹1.25L cap (capped at ₹1,25,000 for calculation).`);
+      }
+      if (currentTenure > SCHEMES.micro.maxTenure) {
+        microWarnings.push(`Tenure exceeds 3-yr limit (calculated at 3-yr cap).`);
+      }
+
+      if (microWarnings.length > 0) {
+        microWarning.classList.remove('hidden');
+        microWarning.innerHTML = `<span class="material-symbols-outlined text-[14px] align-middle mr-1">warning</span> ${microWarnings.join(" ")}`;
+        btnSelectMicro.classList.add('opacity-75');
+      } else {
+        microWarning.classList.add('hidden');
+        btnSelectMicro.classList.remove('opacity-75');
+      }
+
+      // Advisory strip note
+      adviceLowestInterest.innerText = formatINR(microRes.interest);
+
+      // Sync Quick Select Loan buttons visual state
+      document.querySelectorAll('.quick-loan-btn').forEach(btn => {
+        const amt = Number(btn.getAttribute('data-amount'));
+        if (amt === currentLoan) {
+          btn.className = "quick-loan-btn px-2.5 py-1 rounded border border-primary text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed font-semibold";
+        } else {
+          btn.className = "quick-loan-btn px-2.5 py-1 rounded border border-border-subtle text-label-sm font-label-sm text-text-secondary hover:bg-surface-subtle hover:text-text-primary transition-colors";
+        }
+      });
+
+      // Sync Tenure pills visual state
+      document.querySelectorAll('.tenure-pill').forEach(pill => {
+        const yrs = Number(pill.getAttribute('data-years'));
+        if (yrs === currentTenure) {
+          pill.className = "tenure-pill flex-1 py-1.5 rounded border border-primary bg-primary-fixed text-on-primary-fixed font-bold font-label-sm text-label-sm text-center transition-colors";
+        } else {
+          pill.className = "tenure-pill flex-1 py-1.5 rounded border border-border-subtle font-label-sm text-label-sm text-text-secondary hover:bg-surface-subtle text-center transition-colors";
+        }
+      });
+    }
+
+    // Sliders Listeners
+    loanSlider.addEventListener('input', (e) => {
+      currentLoan = Number(e.target.value);
+      render();
+    });
+
+    tenureSlider.addEventListener('input', (e) => {
+      currentTenure = Number(e.target.value);
+      render();
+    });
+
+    // Quick Select Buttons
+    document.querySelectorAll('.quick-loan-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLoan = Number(btn.getAttribute('data-amount'));
+        loanSlider.value = currentLoan;
+        render();
+      });
+    });
+
+    // Tenure Pills
+    document.querySelectorAll('.tenure-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        currentTenure = Number(pill.getAttribute('data-years'));
+        tenureSlider.value = currentTenure;
+        render();
+      });
+    });
+
+    // Reset Button
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      currentLoan = 120000;
+      currentTenure = 3;
+      loanSlider.value = currentLoan;
+      tenureSlider.value = currentTenure;
+      render();
+    });
+
+    // FLOATING COPILOT INTERACTION LOGIC
+    function expandDock(queryText) {
+      if (queryText) {
+        dockUserText.innerText = queryText;
+        dockInput.placeholder = "Ask another what-if scenario...";
+      }
+      dockChips.classList.add('hidden');
+      dockExpandedContent.classList.remove('hidden');
+      dockExpandedContent.classList.add('flex');
+    }
+
+    function collapseDock() {
+      dockExpandedContent.classList.add('hidden');
+      dockExpandedContent.classList.remove('flex');
+      dockChips.classList.remove('hidden');
+      dockInput.placeholder = "Ask ALIGN to explore a what-if scenario...";
+    }
+
+    document.querySelectorAll('.dock-chip-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const query = btn.getAttribute('data-query');
+        expandDock(query);
+      });
+    });
+
+    dockInput.addEventListener('focus', () => {
+      // Auto expand to show assistance when user engages
+      expandDock(dockInput.value.trim() || "What if I reduce the loan amount to ₹80,000?");
+    });
+
+    dockInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const text = dockInput.value.trim() || "What if I reduce the loan amount to ₹80,000?";
+        expandDock(text);
+        dockInput.value = '';
+      }
+    });
+
+    dockSend.addEventListener('click', () => {
+      const text = dockInput.value.trim() || "What if I reduce the loan amount to ₹80,000?";
+      expandDock(text);
+      dockInput.value = '';
+    });
+
+    btnCloseDock.addEventListener('click', () => {
+      collapseDock();
+    });
+
+    btnApplyDock.addEventListener('click', () => {
+      currentLoan = 80000;
+      loanSlider.value = 80000;
+      render();
+
+      btnApplyDock.innerHTML = `
+        <span class="material-symbols-outlined text-[16px]">check</span>
+        <span>Applied ₹80,000 to calculator</span>
+      `;
+      btnApplyDock.classList.remove('bg-secondary');
+      btnApplyDock.classList.add('bg-primary');
+
+      // Scroll smoothly to upper control panel to highlight sync
+      const calcHeader = document.querySelector('#display-loan-text');
+      if (calcHeader) {
+        calcHeader.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      setTimeout(() => {
+        collapseDock();
+        btnApplyDock.innerHTML = `
+          <span class="material-symbols-outlined text-[16px]">tune</span>
+          <span>Apply this scenario to calculator</span>
+        `;
+        btnApplyDock.classList.remove('bg-primary');
+        btnApplyDock.classList.add('bg-secondary');
+      }, 1200);
+    });
+
+    // Selection Modal Handling
+    document.querySelectorAll('.btn-select-scheme').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const scheme = btn.getAttribute('data-scheme');
+        let currentEmiText = "₹3,760 /mo";
+        if (scheme === 'PMEGP') currentEmiText = pmegpEmi.innerText + " /mo";
+        if (scheme === 'Udyam Nidhi') currentEmiText = udyamEmi.innerText + " /mo";
+        if (scheme === 'Micro Finance') currentEmiText = microEmi.innerText + " /mo";
+
+        modalSchemeName.innerText = scheme;
+        modalSchemeEmi.innerText = currentEmiText;
+        modalSchemeDesc.innerText = `You have selected ${scheme} for your tailoring micro-enterprise requirement of ${formatINR(currentLoan)} over ${currentTenure} ${currentTenure === 1 ? 'year' : 'years'}.`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+
+    modalBtnBack.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    modalBtnProceed.addEventListener('click', () => {
+      modalBtnProceed.innerHTML = `
+        <span class="material-symbols-outlined text-[18px] animate-spin">sync</span>
+        <span>Loading Branch Map...</span>
+      `;
+      setTimeout(() => {
+        alert("Navigating to Step 4: Partner Bank Discovery & Desk Mapping (Kolkata Municipal Cluster)");
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        modalBtnProceed.innerHTML = `
+          <span>Continue to Step 4</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        `;
+      }, 600);
+    });
+
+    // Initial render
+    render();
+  })();
+</script></main><footer class="w-full bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-2xl"><div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg pb-space-xl border-b border-border-subtle"><div class="max-w-md"><div class="flex items-center gap-space-xs mb-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><p class="font-body-sm text-body-sm text-text-secondary">Making financial assistance easier to understand for marginalized entrepreneurs.</p></div><nav class="flex flex-wrap items-center gap-space-lg" data-active-classes="text-text-primary font-bold"><a aria-current="page" class="transition-colors text-text-primary font-bold" data-path="how-it-works" href="#">How it works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms</a></nav></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-caption text-caption text-text-muted">Source: Official scheme guidelines &amp; verified institutional frameworks.</p><p class="font-caption text-caption text-text-muted">© 2025 ALIGN Public Financial Initiative. All rights reserved.</p></div></div></footer></body></html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f1f4f9", "border-strong": "#C8C0B5", "surface-container-highest": "#e0e3e8", "surface-container": "#ebeef3", "status-warning-bg": "#FEF7EC", "status-info-text": "#18426B", "primary": "#002046", "error-container": "#ffdad6", "status-error-text": "#991B1B", "inverse-surface": "#2d3135", "tertiary-fixed": "#d1e4fd", "primary-container": "#1b365d", "on-secondary": "#ffffff", "on-primary-fixed": "#001b3d", "border-subtle": "#E5DFD7", "primary-fixed-dim": "#aec7f7", "surface-card": "#FFFFFF", "tertiary-fixed-dim": "#b5c8e0", "inverse-on-surface": "#eef1f6", "on-secondary-container": "#337053", "on-primary": "#ffffff", "secondary-fixed-dim": "#95d4b2", "text-muted": "#7A828B", "text-secondary": "#57606A", "surface-tint": "#465f88", "text-primary": "#1E2227", "on-error-container": "#93000a", "on-primary-container": "#87a0cd", "background": "#f7f9ff", "primary-fixed": "#d6e3ff", "surface-subtle": "#F3EFEA", "on-surface-variant": "#44474e", "secondary-fixed": "#b0f1cd", "on-tertiary": "#ffffff", "surface-container-high": "#e5e8ee", "outline-variant": "#c4c6cf", "surface-ivory": "#FAF8F5", "on-surface": "#181c20", "outline": "#74777f", "inverse-primary": "#aec7f7", "surface-variant": "#e0e3e8", "status-success-text": "#1F5239", "surface": "#f7f9ff", "status-warning-text": "#8F5B10", "tertiary-container": "#24374a", "surface-container-lowest": "#ffffff", "status-error-bg": "#FDF2F2", "on-tertiary-container": "#8da0b7", "surface-bright": "#f7f9ff", "status-info-bg": "#EEF4FA", "tertiary": "#0d2234", "on-secondary-fixed-variant": "#0e5137", "status-success-bg": "#EDF6F0", "surface-dim": "#d7dadf", "secondary-container": "#b0f1cd", "on-background": "#181c20", "on-primary-fixed-variant": "#2e476f", "on-tertiary-fixed": "#081d2f", "secondary": "#2c694d", "on-tertiary-fixed-variant": "#36485c", "on-secondary-fixed": "#002113", "on-error": "#ffffff", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "1200px", "space-2xs": "0.25rem", "space-3xl": "4rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-4xl": "6rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-sm": "0.75rem", "space-md": "1rem", "space-xs": "0.5rem" }, "fontFamily": { "body-sm": [ "Manrope" ], "headline-lg-mobile": [ "Manrope" ], "display": [ "Manrope" ], "label-sm": [ "Manrope" ], "headline-sm": [ "Manrope" ], "caption": [ "Manrope" ], "body-md": [ "Manrope" ], "body-lg": [ "Manrope" ], "label-md": [ "Manrope" ], "display-mobile": [ "Manrope" ], "headline-lg": [ "Manrope" ], "financial-stat-lg": [ "Manrope" ], "headline-md": [ "Manrope" ], "financial-stat-md": [ "Manrope" ] }, "fontSize": { "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display": [ "44px", { "lineHeight": "54px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "label-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "caption": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "financial-stat-lg": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "financial-stat-md": [ "22px", { "lineHeight": "28px", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface-ivory font-body-md text-text-primary antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface-ivory/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="ALIGN Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="bg-surface-subtle text-text-primary font-label-md rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-subtle text-text-primary font-label-md rounded-lg" data-path="how-it-works" href="#">How it works</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-label-md text-label-md px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center h-12 px-space-md rounded-lg font-label-md text-label-md text-text-primary hover:bg-surface-subtle hover:text-text-primary transition-colors" data-path="sign-in" href="#">Sign in</a><a class="inline-flex items-center justify-center h-12 px-space-lg rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_2px_6px_rgba(33,37,41,0.03)] hover:bg-primary transition-colors" data-path="need-analysis" href="#">Find a Scheme</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface-ivory flex-1"><div class="flex flex-col w-full pb-space-3xl">
+<!-- Minimal Sub-Header with Brand Context & Stepper -->
+<section class="w-full bg-surface-card shadow-sm">
+<div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-sm flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<img alt="ALIGN Institutional Brand Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/>
+<div class="h-5 w-px bg-border-subtle hidden sm:block"></div>
+<div class="hidden sm:inline-flex items-center gap-space-2xs px-space-xs py-0.5 rounded-full bg-status-info-bg text-status-info-text font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Gazette Nodal Partner Registry Active • FY 2024-25 • Kolkata Region</span>
+</div>
+</div>
+<!-- Stepper Progression -->
+<nav aria-label="Progress Tracker" class="w-full md:w-auto">
+<ol class="flex items-center justify-between md:justify-end gap-1 sm:gap-space-xs">
+<!-- Step 1 -->
+<li class="flex items-center gap-1 opacity-80">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="font-caption text-caption text-text-secondary hidden sm:inline">01 Need</span>
+</li>
+<div class="w-3 sm:w-5 h-px bg-secondary"></div>
+<!-- Step 2 -->
+<li class="flex items-center gap-1 opacity-80">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="font-caption text-caption text-text-secondary hidden sm:inline">02 Match</span>
+</li>
+<div class="w-3 sm:w-5 h-px bg-secondary"></div>
+<!-- Step 3 -->
+<li class="flex items-center gap-1 opacity-80">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-caption text-caption">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="font-caption text-caption text-text-secondary hidden sm:inline">03 Compare</span>
+</li>
+<div class="w-3 sm:w-5 h-px bg-primary"></div>
+<!-- Step 4: Active -->
+<li class="flex items-center gap-1.5 px-space-xs py-1 rounded bg-primary text-on-primary">
+<span class="w-5 h-5 rounded-full bg-on-primary text-primary flex items-center justify-center font-label-sm text-label-sm font-bold">4</span>
+<span class="font-label-sm text-label-sm tracking-wide">04 Partner</span>
+<span class="hidden lg:inline-block px-1.5 py-0.2 bg-secondary text-on-secondary rounded text-[10px] uppercase font-bold tracking-wider">ACTIVE</span>
+</li>
+<div class="w-3 sm:w-5 h-px bg-border-subtle"></div>
+<!-- Step 5: Upcoming -->
+<li class="flex items-center gap-1 text-text-muted">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-text-muted flex items-center justify-center font-caption text-caption">5</span>
+<span class="font-caption text-caption hidden sm:inline">05 Apply</span>
+</li>
+</ol>
+</nav>
+</div>
+</section>
+<div class="max-w-[1200px] w-full mx-auto px-gutter-mobile lg:px-gutter-desktop pt-space-md flex flex-col gap-space-lg">
+<!-- 1. SELECTED SCHEME CONTEXT BAR -->
+<section class="bg-surface-card rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<span class="px-space-xs py-0.5 rounded bg-surface-subtle font-label-sm text-label-sm text-primary uppercase tracking-wider">Selected Scheme</span>
+<span class="font-caption text-caption text-text-muted">Reference: MSME-WB-2024-PMEGP-09</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary leading-tight">Term Loan — PMEGP (Prime Minister Employment Generation Programme)</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+            Up to <strong class="text-text-primary">₹45,00,000</strong> • Subsidized rate <strong class="text-text-primary">8.0% p.a.</strong> • Up to <strong class="text-secondary">35% Capital Subsidy</strong> • 1–7 Years Tenure
+          </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm w-full lg:w-auto justify-between lg:justify-end">
+<span class="font-caption text-caption text-text-secondary max-w-xs hidden xl:block">
+          Authorized public sector banks accredited for direct margin money release.
+        </span>
+<button class="inline-flex items-center gap-1.5 px-space-md h-10 rounded-lg bg-surface-subtle hover:bg-surface-container font-label-md text-label-md text-text-primary transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Change scheme</span>
+</button>
+</div>
+</section>
+<!-- 2. PAGE HEADER & SEARCH / FILTER CONTROLS -->
+<header class="flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-text-muted tracking-widest uppercase">Channel Partner Discovery • Step 4 of 5</span>
+<h1 class="font-display text-display text-text-primary tracking-tight">Where would you like to apply?</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-2xl">
+            Locate accredited channel partner branches qualified to sanction PMEGP credit-linked capital subsidy in your district. Select an authorized nodal branch to initiate application routing.
+          </p>
+</div>
+<!-- Active Status Indicator -->
+<div class="flex items-center gap-2 self-start md:self-auto px-space-sm py-1.5 rounded-lg bg-status-success-bg text-status-success-text font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>3 Authorized Desks Online in Kolkata</span>
+</div>
+</div>
+<!-- Controls & Search Toolbar -->
+<div class="bg-surface-card rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm">
+<!-- Location Input -->
+<div class="md:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[20px]">near_me</span>
+<input class="w-full h-11 pl-10 pr-24 rounded-lg bg-surface-subtle font-body-sm text-body-sm text-text-primary focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="location-input" type="text" value="Kolkata, West Bengal (700016)"/>
+<button class="absolute right-2 px-2 py-1 text-[11px] font-label-sm rounded bg-surface-card text-primary shadow-xs hover:bg-surface-container transition-colors" id="use-location-btn" type="button">
+              GPS Current
+            </button>
+</div>
+<!-- Free text search -->
+<div class="md:col-span-5 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-subtle font-body-sm text-body-sm text-text-primary focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all" id="partner-search-input" placeholder="Search branch name, landmark or PIN code..." type="text"/>
+</div>
+<!-- Radius Dropdown -->
+<div class="md:col-span-3 flex items-center gap-2">
+<div class="relative w-full">
+<select class="w-full h-11 px-3 rounded-lg bg-surface-subtle font-body-sm text-body-sm text-text-primary appearance-none focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer pr-8" id="radius-select">
+<option value="5">Within 5 km radius</option>
+<option selected="" value="10">Within 10 km radius</option>
+<option value="25">Within 25 km radius</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-text-muted text-[20px] pointer-events-none">arrow_drop_down</span>
+</div>
+<!-- Empty state toggle for reviewer preview -->
+<button class="h-11 px-2.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-text-secondary text-[11px] font-label-sm whitespace-nowrap flex items-center gap-1" id="toggle-empty-state" title="Toggle simulation: zero partners found">
+<span class="material-symbols-outlined text-[16px]">filter_alt_off</span>
+<span class="hidden sm:inline">Simulate Empty</span>
+</button>
+</div>
+</div>
+<!-- Filter category chips -->
+<div class="flex items-center justify-between flex-wrap gap-space-xs pt-space-xs border-t border-surface-subtle">
+<div class="flex flex-wrap items-center gap-space-xs" id="filter-chips">
+<button class="filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-xs transition-all" data-filter="all">
+              All Partners (3)
+            </button>
+<button class="filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-secondary hover:bg-surface-container transition-all" data-filter="scb">
+              Scheduled Commercial Banks (2)
+            </button>
+<button class="filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-secondary hover:bg-surface-container transition-all" data-filter="rrb">
+              Regional Rural Banks (RRBs)
+            </button>
+<button class="filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-secondary hover:bg-surface-container transition-all" data-filter="mfi">
+              NBFC-MFIs
+            </button>
+<button class="filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-secondary hover:bg-surface-container transition-all" data-filter="msme">
+              District MSME Nodal Desks (1)
+            </button>
+</div>
+<div class="flex items-center gap-1 text-text-muted font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Sorted by Proximity &amp; Nodal Sanction Speed</span>
+</div>
+</div>
+</div>
+</header>
+<!-- 3. SPLIT INTERACTIVE LAYOUT (PARTNER DIRECTORY + DYNAMIC VECTOR MAP) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start transition-all duration-300" id="layout-container">
+<!-- LEFT COLUMN: PARTNER CARDS DIRECTORY -->
+<section class="lg:col-span-7 flex flex-col gap-space-md transition-all duration-300" id="directory-panel">
+<!-- Normal State Container -->
+<div class="flex flex-col gap-space-md" id="cards-container">
+<!-- CARD 1 (SBI Park Street - Default Selected) -->
+<article class="partner-card bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden ring-2 ring-primary" data-partner-id="1">
+<!-- Selected indicator bar -->
+<div class="selection-accent-bar absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-[11px] tracking-wide">
+                      Lead Nodal Bank for PMEGP
+                    </span>
+<span class="px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-[11px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Desk Active • Processing Inquiries
+                    </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">State Bank of India — SME Park Street Branch</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">location_on</span>
+                    12/A Park Street, Chowringhee, Kolkata 700016
+                  </p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-financial-stat-md text-financial-stat-md text-primary">2.4 km</span>
+<p class="font-caption text-caption text-text-muted">Est. 12 min travel</p>
+</div>
+</div>
+<!-- Services Matrix -->
+<div class="bg-surface-ivory rounded-lg p-space-sm grid grid-cols-1 sm:grid-cols-3 gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">PMEGP Application Desk</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">Margin Subsidy Escrow</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">On-site Doc Verification</span>
+</div>
+</div>
+<!-- Contact & Personnel info -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-space-xs border-t border-surface-subtle font-caption text-caption text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[16px]">call</span>
+<span>Ph: 033-2229-8400</span>
+<span class="text-border-strong">•</span>
+<span class="text-text-primary font-medium">Lead Officer: Shri S. Chatterjee (MSME Desk)</span>
+</div>
+<div class="text-text-muted">Working hours: 10:00 - 16:00</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="select-btn h-10 px-space-md rounded-lg font-label-md text-label-md bg-primary text-on-primary transition-all flex items-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Selected Partner</span>
+</button>
+<a class="h-10 px-space-sm rounded-lg font-label-md text-label-md bg-surface-subtle text-text-primary hover:bg-surface-container transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Directions ↗</span>
+</a>
+</div>
+<span class="font-caption text-caption text-secondary font-semibold">Priority PMEGP Queue</span>
+</div>
+</div>
+</article>
+<!-- CARD 2 (PNB Ballygunge) -->
+<article class="partner-card bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" data-partner-id="2">
+<div class="selection-accent-bar absolute left-0 top-0 bottom-0 w-1.5 bg-transparent"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-[11px] tracking-wide">
+                      Authorized Channel Partner
+                    </span>
+<span class="px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-[11px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Desk Active
+                    </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Punjab National Bank — Ballygunge Circular Branch</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">location_on</span>
+                    88 Ballygunge Circular Rd, Kolkata 700019
+                  </p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-financial-stat-md text-financial-stat-md text-text-primary">4.1 km</span>
+<p class="font-caption text-caption text-text-muted">Est. 19 min travel</p>
+</div>
+</div>
+<!-- Services Matrix -->
+<div class="bg-surface-ivory rounded-lg p-space-sm grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">Direct Project Lending Desk</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">KVIC Nodal Portal Integration</span>
+</div>
+</div>
+<!-- Contact & Personnel info -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-space-xs border-t border-surface-subtle font-caption text-caption text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[16px]">call</span>
+<span>Ph: 033-2475-1120</span>
+<span class="text-border-strong">•</span>
+<span class="text-text-primary font-medium">Nodal Desk: Smt. P. Mukherjee</span>
+</div>
+<div class="text-text-muted">Avg response: 24 hrs</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="select-btn h-10 px-space-md rounded-lg font-label-md text-label-md bg-surface-subtle hover:bg-surface-container text-text-primary transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+<span>Select partner</span>
+</button>
+<a class="h-10 px-space-sm rounded-lg font-label-md text-label-md bg-surface-subtle text-text-primary hover:bg-surface-container transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Directions ↗</span>
+</a>
+</div>
+<span class="font-caption text-caption text-text-muted">Accepting FY25 Batches</span>
+</div>
+</div>
+</article>
+<!-- CARD 3 (UCO Bank Salt Lake) -->
+<article class="partner-card bg-surface-card rounded-xl p-space-md shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" data-partner-id="3">
+<div class="selection-accent-bar absolute left-0 top-0 bottom-0 w-1.5 bg-transparent"></div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex flex-wrap items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-text-secondary font-label-sm text-[11px] tracking-wide">
+                      Lead District Hub
+                    </span>
+<span class="px-2 py-0.5 rounded bg-status-success-bg text-status-success-text font-label-sm text-[11px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Desk Active
+                    </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">UCO Bank — Salt Lake Sector 1 Branch</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">location_on</span>
+                    Block DB-24, Salt Lake City, Bidhannagar, Kolkata 700064
+                  </p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-financial-stat-md text-financial-stat-md text-text-primary">5.8 km</span>
+<p class="font-caption text-caption text-text-muted">Est. 25 min travel</p>
+</div>
+</div>
+<!-- Services Matrix -->
+<div class="bg-surface-ivory rounded-lg p-space-sm grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">PMEGP Credit Linked Processing</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span class="font-caption text-caption text-text-primary">Direct DIC / KVIC Coordination</span>
+</div>
+</div>
+<!-- Contact & Personnel info -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-space-xs border-t border-surface-subtle font-caption text-caption text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[16px]">call</span>
+<span>Ph: 033-2337-5678</span>
+<span class="text-border-strong">•</span>
+<span class="text-text-primary font-medium">Branch Chief: Shri A. Roy</span>
+</div>
+<div class="text-text-muted">Bidhannagar Sub-district</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button class="select-btn h-10 px-space-md rounded-lg font-label-md text-label-md bg-surface-subtle hover:bg-surface-container text-text-primary transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+<span>Select partner</span>
+</button>
+<a class="h-10 px-space-sm rounded-lg font-label-md text-label-md bg-surface-subtle text-text-primary hover:bg-surface-container transition-colors flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Directions ↗</span>
+</a>
+</div>
+<span class="font-caption text-caption text-text-muted">Fast Subsidy Sanctions</span>
+</div>
+</div>
+</article>
+</div>
+<!-- EMPTY STATE PREVIEW CONTAINER (Hidden by default, triggered via test toggle or search) -->
+<div class="hidden bg-surface-card rounded-xl p-space-2xl text-center shadow-sm flex flex-col items-center justify-center gap-space-md" id="empty-state-card">
+<div class="w-16 h-16 rounded-full bg-status-warning-bg text-status-warning-text flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">travel_explore</span>
+</div>
+<div class="max-w-md">
+<h3 class="font-headline-sm text-headline-sm text-text-primary">No nearby partners found within 5 km</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+              There are currently no authorized PMEGP nodal branches meeting your narrow filter criteria. Expand your radius to 25 km or check adjoining districts.
+            </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-xs hover:bg-primary-container transition-colors" id="expand-radius-btn" type="button">
+              Expand Search to 25 km
+            </button>
+<button class="h-11 px-space-md rounded-lg bg-surface-subtle hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors" id="reset-filters-btn" type="button">
+              Reset Filters
+            </button>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: HIGH-FIDELITY ARCHITECTURAL VECTOR MAP -->
+<section class="lg:col-span-5 w-full sticky top-24 transition-all duration-300" id="map-panel">
+<div class="bg-surface-card rounded-xl overflow-hidden shadow-sm flex flex-col relative h-[580px] lg:h-[680px]">
+<!-- Map Top Chrome Bar -->
+<div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+<!-- Expand/Collapse Mode Toggle -->
+<button class="pointer-events-auto h-9 px-space-sm rounded-lg bg-surface-card/95 backdrop-blur text-text-primary font-label-sm text-label-sm shadow-md hover:bg-surface-subtle transition-all flex items-center gap-1.5 border-0" id="toggle-map-size-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" id="expand-icon">open_in_full</span>
+<span id="expand-text">Expand Map</span>
+</button>
+<!-- Map Layer Pills -->
+<div class="pointer-events-auto flex items-center gap-1 bg-surface-card/95 backdrop-blur p-1 rounded-lg shadow-md">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-[11px]">Roads</span>
+<span class="px-2 py-0.5 rounded text-text-secondary hover:text-text-primary font-label-sm text-[11px] cursor-pointer">Nodal Overlay</span>
+</div>
+</div>
+<!-- Vector Map Canvas (Hooghly River & Kolkata Street Scheme) -->
+<div class="relative w-full h-full bg-[#f6f5ef] overflow-hidden select-none cursor-grab active:cursor-grabbing">
+<svg class="w-full h-full" preserveaspectratio="xMidYMid slice" viewbox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="riverGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#d6e8fa"></stop>
+<stop offset="100%" stop-color="#c5def5"></stop>
+</lineargradient>
+<pattern height="40" id="cityGrid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8e5dc" stroke-width="1"></path>
+</pattern>
+<filter height="140%" id="shadowFilter" width="140%" x="-20%" y="-20%">
+<fedropshadow dx="0" dy="3" flood-color="#1B365D" flood-opacity="0.18" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<!-- Grid texture background -->
+<rect fill="#f6f5ef" height="700" width="600"></rect>
+<rect fill="url(#cityGrid)" height="700" width="600"></rect>
+<!-- Hooghly River Geometry (West boundary) -->
+<path d="M 120 -20 
+                       C 110 90, 80 160, 95 240 
+                       C 115 340, 130 420, 110 520 
+                       C 90 620, 60 670, 45 720 
+                       L -20 720 L -20 -20 Z" fill="url(#riverGradient)"></path>
+<text fill="#789ab9" font-size="11" font-weight="600" letter-spacing="3" opacity="0.8" transform="rotate(-78, 50, 320)" x="50" y="320">HOOGHLY RIVER</text>
+<!-- Howrah & Vidyasagar Setu bridges -->
+<line stroke="#a3b8cb" stroke-linecap="round" stroke-width="4" x1="85" x2="140" y1="180" y2="185"></line>
+<line stroke="#a3b8cb" stroke-linecap="round" stroke-width="4" x1="108" x2="170" y1="410" y2="400"></line>
+<!-- Main Arteries & Roads -->
+<!-- AJC Bose Road & Flyover -->
+<path d="M 140 185 Q 220 220 270 320 T 380 480" fill="none" stroke="#ded9ce" stroke-width="8"></path>
+<path d="M 140 185 Q 220 220 270 320 T 380 480" fill="none" stroke="#ffffff" stroke-width="5"></path>
+<!-- Park Street / Shakespeare Sarani Axis -->
+<path d="M 160 360 L 460 370" fill="none" stroke="#ffffff" stroke-width="4"></path>
+<path d="M 160 360 L 460 370" fill="none" stroke="#e0dbd0" stroke-width="1"></path>
+<!-- EM Bypass Outer Ring -->
+<path d="M 440 40 Q 420 250 490 460 T 460 680" fill="none" stroke="#f0ece4" stroke-width="7"></path>
+<path d="M 440 40 Q 420 250 490 460 T 460 680" fill="none" stroke="#ffffff" stroke-width="4"></path>
+<!-- Salt Lake Sector Arcs -->
+<path d="M 370 120 L 560 120 L 530 250 L 380 230 Z" fill="#eeeae0" opacity="0.6"></path>
+<text fill="#a09b8f" font-size="12" font-weight="700" letter-spacing="1" x="440" y="180">SALT LAKE SEC-1</text>
+<!-- Maidan Green Zone -->
+<path d="M 180 290 C 230 280, 240 370, 220 440 C 180 440, 160 350, 180 290 Z" fill="#e2ecd8" opacity="0.7"></path>
+<text fill="#7a9768" font-size="11" font-weight="600" letter-spacing="1" x="180" y="380">MAIDAN</text>
+<!-- USER CURRENT LOCATION PIN (Park Circus area) -->
+<g transform="translate(340, 420)">
+<!-- Pulse animation circle -->
+<circle cx="0" cy="0" fill="#18426B" opacity="0.15" r="16">
+<animate attributename="r" dur="3s" repeatcount="indefinite" values="12;24;12"></animate>
+<animate attributename="opacity" dur="3s" repeatcount="indefinite" values="0.25;0.02;0.25"></animate>
+</circle>
+<circle cx="0" cy="0" fill="#18426B" r="7"></circle>
+<circle cx="0" cy="0" fill="#ffffff" r="3"></circle>
+<!-- User Location Tooltip -->
+<rect fill="#18426B" filter="url(#shadowFilter)" height="22" rx="4" width="130" x="-65" y="12"></rect>
+<text fill="#ffffff" font-size="10" font-weight="600" text-anchor="middle" x="0" y="27">You (Park Circus)</text>
+</g>
+<!-- PARTNER PIN 1: SBI Park Street (Selected) -->
+<g class="map-marker-group cursor-pointer transition-transform duration-200" id="map-pin-1" transform="translate(250, 350)">
+<!-- Target radar ring -->
+<circle cx="0" cy="0" fill="#1b365d" opacity="0.12" r="22"></circle>
+<!-- Pin Base -->
+<path d="M 0 0 C -12 -12, -14 -28, 0 -36 C 14 -28, 12 -12, 0 0 Z" fill="#1b365d" filter="url(#shadowFilter)"></path>
+<circle cx="0" cy="-24" fill="#ffffff" r="8"></circle>
+<text fill="#1b365d" font-size="9" font-weight="bold" text-anchor="middle" x="0" y="-21">1</text>
+<!-- Callout Badge -->
+<rect fill="#1b365d" height="22" rx="5" width="136" x="-68" y="-62"></rect>
+<text fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle" x="0" y="-47">SBI Park St • 2.4 km</text>
+</g>
+<!-- PARTNER PIN 2: PNB Ballygunge -->
+<g class="map-marker-group cursor-pointer transition-transform duration-200" id="map-pin-2" transform="translate(300, 510)">
+<path d="M 0 0 C -10 -10, -12 -24, 0 -30 C 12 -24, 10 -10, 0 0 Z" fill="#2c694d" filter="url(#shadowFilter)"></path>
+<circle cx="0" cy="-20" fill="#ffffff" r="7"></circle>
+<text fill="#2c694d" font-size="8" font-weight="bold" text-anchor="middle" x="0" y="-17">2</text>
+<!-- Callout Badge -->
+<rect fill="#ffffff" filter="url(#shadowFilter)" height="19" rx="4" width="120" x="-60" y="-52"></rect>
+<text fill="#1E2227" font-size="9.5" font-weight="600" text-anchor="middle" x="0" y="-39">PNB Ballygunge • 4.1 km</text>
+</g>
+<!-- PARTNER PIN 3: UCO Bank Salt Lake -->
+<g class="map-marker-group cursor-pointer transition-transform duration-200" id="map-pin-3" transform="translate(450, 190)">
+<path d="M 0 0 C -10 -10, -12 -24, 0 -30 C 12 -24, 10 -10, 0 0 Z" fill="#2c694d" filter="url(#shadowFilter)"></path>
+<circle cx="0" cy="-20" fill="#ffffff" r="7"></circle>
+<text fill="#2c694d" font-size="8" font-weight="bold" text-anchor="middle" x="0" y="-17">3</text>
+<!-- Callout Badge -->
+<rect fill="#ffffff" filter="url(#shadowFilter)" height="19" rx="4" width="116" x="-58" y="-52"></rect>
+<text fill="#1E2227" font-size="9.5" font-weight="600" text-anchor="middle" x="0" y="-39">UCO Salt Lake • 5.8 km</text>
+</g>
+</svg>
+<!-- Map Floating Bottom Controls -->
+<div class="absolute bottom-4 right-3 z-20 flex flex-col gap-1.5">
+<button aria-label="Zoom In" class="w-8 h-8 rounded-lg bg-surface-card text-text-primary shadow-md hover:bg-surface-subtle flex items-center justify-center font-bold text-lg" type="button">
+                +
+              </button>
+<button aria-label="Zoom Out" class="w-8 h-8 rounded-lg bg-surface-card text-text-primary shadow-md hover:bg-surface-subtle flex items-center justify-center font-bold text-lg" type="button">
+                −
+              </button>
+<button aria-label="Recenter Map" class="w-8 h-8 rounded-lg bg-surface-card text-text-primary shadow-md hover:bg-surface-subtle flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+</div>
+<!-- Distance Scale Metric -->
+<div class="absolute bottom-4 left-3 z-20 bg-surface-card/90 backdrop-blur px-2.5 py-1 rounded shadow-xs flex items-center gap-1.5 font-caption text-caption text-text-secondary">
+<div class="w-12 h-1 bg-text-secondary"></div>
+<span>2 km scale</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 6. FOCUSED PARTNER SELECTION DRAWER (STICKY PROCEED BAR) -->
+<aside class="w-full bg-surface-card rounded-xl p-space-md shadow-md border-t-2 border-primary flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md mt-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-status-success-bg text-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Confirmed Destination</span>
+<span class="w-1.5 h-1.5 rounded-full bg-border-strong"></span>
+<span class="font-caption text-caption text-text-muted">Direct Subsidy Routing Ready</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary" id="selected-branch-name">
+            State Bank of India — SME Park Street Branch
+          </h4>
+<p class="font-body-sm text-body-sm text-text-secondary">
+            Your application dossier and margin subsidy claims will be pre-addressed to the official MSME nodal officer desk at this branch.
+          </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full md:w-auto">
+<button class="w-full sm:w-auto h-12 px-space-md rounded-lg bg-surface-subtle hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Download Branch Checklist (PDF)</span>
+</button>
+<button class="w-full sm:w-auto h-12 px-space-xl rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2" id="proceed-apply-btn" type="button">
+<span>Continue to Application Guidance</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</aside>
+<!-- 7. TRUST & REGISTRY TRANSPARENCY NOTICE -->
+<footer class="pt-space-sm pb-space-lg flex flex-col sm:flex-row items-start gap-space-sm text-text-muted font-caption text-caption leading-relaxed">
+<span class="material-symbols-outlined text-text-secondary text-[20px] flex-shrink-0 mt-0.5">account_balance</span>
+<p>
+<strong>Official Source &amp; Authorization Guarantee:</strong> Partner branch eligibility, PMEGP nodal desks, and officer allocations are synchronized with the official State Level Bankers’ Committee (SLBC) West Bengal gazette registry. Branch physical queue availability is subject to public bank operational windows (Monday–Saturday 10:00 to 16:00, closed 2nd and 4th Saturdays).
+      </p>
+</footer>
+</div>
+</div>
+<script>
+  (function() {
+    // Partner Data Reference
+    const partners = {
+      "1": {
+        name: "State Bank of India — SME Park Street Branch",
+        distance: "2.4 km away",
+        officer: "Shri S. Chatterjee (MSME Desk)"
+      },
+      "2": {
+        name: "Punjab National Bank — Ballygunge Circular Branch",
+        distance: "4.1 km away",
+        officer: "Smt. P. Mukherjee"
+      },
+      "3": {
+        name: "UCO Bank — Salt Lake Sector 1 Branch",
+        distance: "5.8 km away",
+        officer: "Shri A. Roy"
+      }
+    };
+
+    let selectedId = "1";
+    let isMapExpanded = false;
+
+    const cards = document.querySelectorAll('.partner-card');
+    const mapPins = {
+      "1": document.getElementById('map-pin-1'),
+      "2": document.getElementById('map-pin-2'),
+      "3": document.getElementById('map-pin-3')
+    };
+    const selectedBranchNameElem = document.getElementById('selected-branch-name');
+
+    // Handle Selection Updates
+    function setSelection(id) {
+      if (!partners[id]) return;
+      selectedId = id;
+      selectedBranchNameElem.textContent = partners[id].name;
+
+      // Update Cards UI
+      cards.forEach(card => {
+        const cardId = card.getAttribute('data-partner-id');
+        const accent = card.querySelector('.selection-accent-bar');
+        const btn = card.querySelector('.select-btn');
+        if (cardId === id) {
+          card.classList.add('ring-2', 'ring-primary');
+          accent.classList.remove('bg-transparent');
+          accent.classList.add('bg-primary');
+          btn.className = 'select-btn h-10 px-space-md rounded-lg font-label-md text-label-md bg-primary text-on-primary transition-all flex items-center gap-1.5 shadow-xs';
+          btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">task_alt</span><span>Selected Partner</span>';
+        } else {
+          card.classList.remove('ring-2', 'ring-primary');
+          accent.classList.remove('bg-primary');
+          accent.classList.add('bg-transparent');
+          btn.className = 'select-btn h-10 px-space-md rounded-lg font-label-md text-label-md bg-surface-subtle hover:bg-surface-container text-text-primary transition-all flex items-center gap-1.5';
+          btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span><span>Select partner</span>';
+        }
+      });
+
+      // Update Map Pins
+      Object.keys(mapPins).forEach(pid => {
+        const pinGroup = mapPins[pid];
+        if (!pinGroup) return;
+        const mainPath = pinGroup.querySelector('path');
+        const rect = pinGroup.querySelector('rect');
+        const text = pinGroup.querySelector('text[fill="#ffffff"]');
+
+        if (pid === id) {
+          pinGroup.setAttribute('transform', pinGroup.getAttribute('transform').replace(/scale\([^)]+\)/, '') + ' scale(1.15)');
+          if (mainPath) mainPath.setAttribute('fill', '#1b365d');
+          if (rect) rect.setAttribute('fill', '#1b365d');
+        } else {
+          pinGroup.setAttribute('transform', pinGroup.getAttribute('transform').replace(/scale\([^)]+\)/, ''));
+          if (mainPath) mainPath.setAttribute('fill', '#2c694d');
+          if (rect) rect.setAttribute('fill', '#ffffff');
+          const calloutText = pinGroup.querySelector('text:last-of-type');
+          if (calloutText) calloutText.setAttribute('fill', '#1E2227');
+        }
+      });
+    }
+
+    // Attach card click events
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const id = card.getAttribute('data-partner-id');
+        setSelection(id);
+      });
+    });
+
+    // Attach SVG Pin click events
+    Object.keys(mapPins).forEach(pid => {
+      const pin = mapPins[pid];
+      if (pin) {
+        pin.addEventListener('click', () => setSelection(pid));
+      }
+    });
+
+    // Toggle Map Size Mode
+    const toggleMapBtn = document.getElementById('toggle-map-size-btn');
+    const directoryPanel = document.getElementById('directory-panel');
+    const mapPanel = document.getElementById('map-panel');
+    const expandIcon = document.getElementById('expand-icon');
+    const expandText = document.getElementById('expand-text');
+
+    toggleMapBtn.addEventListener('click', () => {
+      isMapExpanded = !isMapExpanded;
+      if (isMapExpanded) {
+        directoryPanel.className = 'lg:col-span-4 flex flex-col gap-space-md transition-all duration-300';
+        mapPanel.className = 'lg:col-span-8 w-full sticky top-24 transition-all duration-300';
+        expandIcon.textContent = 'close_fullscreen';
+        expandText.textContent = 'Collapse Map';
+      } else {
+        directoryPanel.className = 'lg:col-span-7 flex flex-col gap-space-md transition-all duration-300';
+        mapPanel.className = 'lg:col-span-5 w-full sticky top-24 transition-all duration-300';
+        expandIcon.textContent = 'open_in_full';
+        expandText.textContent = 'Expand Map';
+      }
+    });
+
+    // Empty state simulation toggle
+    const toggleEmptyBtn = document.getElementById('toggle-empty-state');
+    const cardsContainer = document.getElementById('cards-container');
+    const emptyStateCard = document.getElementById('empty-state-card');
+    const expandRadiusBtn = document.getElementById('expand-radius-btn');
+    const resetFiltersBtn = document.getElementById('reset-filters-btn');
+    const radiusSelect = document.getElementById('radius-select');
+
+    let isEmptyActive = false;
+    function toggleEmpty() {
+      isEmptyActive = !isEmptyActive;
+      if (isEmptyActive) {
+        cardsContainer.classList.add('hidden');
+        emptyStateCard.classList.remove('hidden');
+      } else {
+        cardsContainer.classList.remove('hidden');
+        emptyStateCard.classList.add('hidden');
+      }
+    }
+
+    if (toggleEmptyBtn) toggleEmptyBtn.addEventListener('click', toggleEmpty);
+    if (resetFiltersBtn) resetFiltersBtn.addEventListener('click', () => {
+      isEmptyActive = true;
+      toggleEmpty();
+      radiusSelect.value = '10';
+    });
+    if (expandRadiusBtn) expandRadiusBtn.addEventListener('click', () => {
+      isEmptyActive = true;
+      toggleEmpty();
+      radiusSelect.value = '25';
+    });
+
+    // Radius select change handler
+    radiusSelect.addEventListener('change', (e) => {
+      if (e.target.value === '5') {
+        if (!isEmptyActive) toggleEmpty();
+      } else {
+        if (isEmptyActive) toggleEmpty();
+      }
+    });
+
+    // GPS mock click
+    const gpsBtn = document.getElementById('use-location-btn');
+    const locationInput = document.getElementById('location-input');
+    gpsBtn.addEventListener('click', () => {
+      locationInput.value = 'Park Circus, Kolkata (700017)';
+      gpsBtn.textContent = 'Updated ✓';
+      setTimeout(() => { gpsBtn.textContent = 'GPS Current'; }, 2000);
+    });
+
+    // Filter Chips Interactive Toggle
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.className = 'filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-surface-subtle text-text-secondary hover:bg-surface-container transition-all';
+        });
+        pill.className = 'filter-pill h-8 px-space-sm rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-xs transition-all';
+      });
+    });
+
+    // Primary CTA Routing Simulation
+    const proceedBtn = document.getElementById('proceed-apply-btn');
+    proceedBtn.addEventListener('click', () => {
+      proceedBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Preparing Application...</span>';
+      setTimeout(() => {
+        alert('Advancing to Step 5: Application Guidance for ' + partners[selectedId].name);
+        proceedBtn.innerHTML = '<span>Continue to Application Guidance</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span>';
+      }, 700);
+    });
+
+  })();
+</script></main><footer class="w-full bg-surface-subtle shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-space-2xl"><div class="max-w-[1200px] mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg pb-space-xl border-b border-border-subtle"><div class="max-w-md"><div class="flex items-center gap-space-xs mb-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ALIGN</span></div><p class="font-body-sm text-body-sm text-text-secondary">Making financial assistance easier to understand for marginalized entrepreneurs.</p></div><nav class="flex flex-wrap items-center gap-space-lg" data-active-classes="text-text-primary font-bold"><a aria-current="page" class="transition-colors text-text-primary font-bold" data-path="how-it-works" href="#">How it works</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="schemes" href="#">Schemes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms</a></nav></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-caption text-caption text-text-muted">Source: Official scheme guidelines &amp; verified institutional frameworks.</p><p class="font-caption text-caption text-text-muted">© 2025 ALIGN Public Financial Initiative. All rights reserved.</p></div></div></footer></body></html>

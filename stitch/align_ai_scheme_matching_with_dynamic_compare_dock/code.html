@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base { 
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; } 
+      body { overscroll-behavior: none; } 
+    } 
+    ::-webkit-scrollbar { display: none; }
+    .caret-blink { animation: blink 1s step-end infinite; }
+    @keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
+
+    /* Custom smooth transition for floating compare dock */
+    .floating-compare-bar {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f1f4f9",
+            "border-strong": "#C8C0B5",
+            "surface-container-highest": "#e0e3e8",
+            "surface-container": "#ebeef3",
+            "status-warning-bg": "#FEF7EC",
+            "status-info-text": "#18426B",
+            "primary": "#002046",
+            "error-container": "#ffdad6",
+            "status-error-text": "#991B1B",
+            "inverse-surface": "#2d3135",
+            "tertiary-fixed": "#d1e4fd",
+            "primary-container": "#1b365d",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#001b3d",
+            "border-subtle": "#E5DFD7",
+            "primary-fixed-dim": "#aec7f7",
+            "surface-card": "#FFFFFF",
+            "tertiary-fixed-dim": "#b5c8e0",
+            "inverse-on-surface": "#eef1f6",
+            "on-secondary-container": "#337053",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#95d4b2",
+            "text-muted": "#7A828B",
+            "text-secondary": "#57606A",
+            "surface-tint": "#465f88",
+            "text-primary": "#1E2227",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#87a0cd",
+            "background": "#f7f9ff",
+            "primary-fixed": "#d6e3ff",
+            "surface-subtle": "#F3EFEA",
+            "on-surface-variant": "#44474e",
+            "secondary-fixed": "#b0f1cd",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#e5e8ee",
+            "outline-variant": "#c4c6cf",
+            "surface-ivory": "#FAF8F5",
+            "on-surface": "#181c20",
+            "outline": "#74777f",
+            "inverse-primary": "#aec7f7",
+            "surface-variant": "#e0e3e8",
+            "status-success-text": "#1F5239",
+            "surface": "#f7f9ff",
+            "status-warning-text": "#8F5B10",
+            "tertiary-container": "#24374a",
+            "surface-container-lowest": "#ffffff",
+            "status-error-bg": "#FDF2F2",
+            "on-tertiary-container": "#8da0b7",
+            "surface-bright": "#f7f9ff",
+            "status-info-bg": "#EEF4FA",
+            "tertiary": "#0d2234",
+            "on-secondary-fixed-variant": "#0e5137",
+            "status-success-bg": "#EDF6F0",
+            "surface-dim": "#d7dadf",
+            "secondary-container": "#b0f1cd",
+            "on-background": "#181c20",
+            "on-primary-fixed-variant": "#2e476f",
+            "on-tertiary-fixed": "#081d2f",
+            "secondary": "#236b48",
+            "on-tertiary-fixed-variant": "#36485c",
+            "on-secondary-fixed": "#002113",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "body": ["Manrope", "sans-serif"],
+            "headline": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface-ivory font-body text-text-primary antialiased min-h-screen flex flex-col selection:bg-secondary/20 selection:text-primary relative pb-20">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-40 bg-surface-ivory/95 backdrop-blur-md border-b border-border-subtle/80 shadow-[0_1px_6px_rgba(0,0,0,0.03)]">
+<div class="h-20 max-w-[1200px] mx-auto px-4 lg:px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="ALIGN Brand Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/>
+</div>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a aria-current="page" class="px-3 py-1.5 transition-colors bg-surface-subtle text-text-primary font-semibold rounded-lg" href="#">How it works</a>
+<a class="px-3 py-1.5 text-text-secondary hover:text-text-primary transition-colors" href="#">Schemes</a>
+<a class="px-3 py-1.5 text-text-secondary hover:text-text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center justify-center h-10 px-4 rounded-lg text-sm font-medium text-text-primary hover:bg-surface-subtle transition-colors" href="#">Sign in</a>
+<a class="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-primary-container text-on-primary text-sm font-semibold shadow-sm hover:bg-primary transition-colors" href="#">Find a Scheme</a>
+<div class="w-8 h-8 rounded-full bg-primary-container/10 border border-border-subtle flex items-center justify-center ml-1">
+<span class="material-symbols-outlined text-primary-container text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Viewport -->
+<main class="w-full pt-20 flex-1 flex flex-col">
+<!-- Pipeline Bar -->
+<section class="w-full bg-surface-subtle border-b border-border-subtle/70 py-2.5">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-1 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-secondary/20"></span>
+<span class="font-bold text-text-primary tracking-wide uppercase" id="pipeline-status-step">
+            Decision Support Pipeline • Step 1 of 4
+          </span>
+<span class="text-text-muted">•</span>
+<span class="text-secondary font-semibold" id="pipeline-status-detail">
+            Natural language discovery mode
+          </span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary">
+<span class="hidden sm:inline">Official Gazette Regulatory Registry: FY 2024–25</span>
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+            Statutory Rule Engine
+          </span>
+</div>
+</div>
+</section>
+<!-- Center Hero / Query Input Section -->
+<section class="w-full py-12 lg:py-16 transition-all duration-500 ease-out" id="hero-query-section">
+<div class="max-w-[840px] mx-auto px-4 flex flex-col items-center text-center gap-6">
+<!-- Header Badge & Title -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-status-info-bg text-status-info-text text-xs font-bold uppercase tracking-wider border border-status-info-text/10">
+<span class="material-symbols-outlined text-[15px]">psychology</span>
+<span>AI-Powered Ministry Scheme Finder</span>
+</div>
+<div class="flex flex-col gap-3">
+<h1 class="text-3xl sm:text-4xl lg:text-[44px] font-bold text-primary tracking-tight leading-tight">
+            What are you looking to do?
+          </h1>
+<p class="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            Tell us your business requirement in your own words. ALIGN deterministically matches official ministry rules, loan ceilings, and interest subsidies.
+          </p>
+</div>
+<!-- Centered Prominent Search / Prompt Box -->
+<div class="w-full text-left bg-surface-card rounded-2xl p-5 sm:p-7 shadow-[0_4px_24px_rgba(27,54,93,0.06)] border border-border-subtle/80 flex flex-col gap-4 relative transition-shadow hover:shadow-[0_8px_30px_rgba(27,54,93,0.09)]">
+<div class="flex items-center justify-between text-xs">
+<label class="font-bold text-primary flex items-center gap-2" for="need-input">
+<span class="material-symbols-outlined text-primary-container text-[18px]">edit_note</span>
+              Describe your funding requirement
+            </label>
+<span class="text-text-muted flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span>
+              Rule Engine Active
+            </span>
+</div>
+<!-- Input Area with Dynamic Rotating Typewriter effect -->
+<div class="relative w-full rounded-xl bg-surface-subtle/60 border border-border-subtle focus-within:border-primary focus-within:bg-surface-card transition-all">
+<textarea class="w-full bg-transparent text-text-primary text-base p-4 focus:outline-none placeholder:text-text-muted resize-none leading-relaxed font-normal" id="need-input" placeholder="" rows="3"></textarea>
+<!-- Clear Button -->
+<button class="hidden absolute top-3 right-3 p-1 rounded-md text-text-muted hover:text-text-primary hover:bg-surface-subtle transition-colors" id="clear-prompt-btn" title="Clear input" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Helper Hints & Action Row -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+<div class="flex items-center gap-1.5 text-text-muted text-xs">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">lightbulb</span>
+<span>Pattern: <strong class="text-text-secondary font-medium">purpose + required sum + annual income + location</strong></span>
+</div>
+<button class="h-12 px-7 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-semibold text-sm shadow-[0_2px_8px_rgba(27,54,93,0.15)] flex items-center justify-center gap-2 transition-all active:scale-[0.98] shrink-0 disabled:opacity-75 disabled:cursor-not-allowed" id="find-schemes-btn" type="button">
+<span id="find-btn-text">Find suitable schemes</span>
+<span class="material-symbols-outlined text-[18px]" id="find-btn-icon">arrow_forward</span>
+</button>
+</div>
+<!-- Suggestion Chips -->
+<div class="pt-2 border-t border-border-subtle/60 flex flex-col gap-2">
+<span class="text-[11px] uppercase tracking-wider font-bold text-text-muted">Or try one-click verified scenarios:</span>
+<div class="flex flex-wrap gap-2" id="suggestion-chips-container">
+<button class="preset-chip text-left px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-xs text-text-primary font-medium border border-border-subtle/70 transition-colors flex items-center gap-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40" data-prompt="I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata." type="button">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span>₹1.2L Tailoring Unit, Kolkata (₹3L Income)</span>
+</button>
+<button class="preset-chip text-left px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-xs text-text-primary font-medium border border-border-subtle/70 transition-colors flex items-center gap-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40" data-prompt="Looking for ₹15 lakh term loan to purchase dairy machinery in Pune. Annual income is ₹6 lakh." type="button">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span>₹15L Dairy Equipment, Pune</span>
+</button>
+<button class="preset-chip text-left px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-xs text-text-primary font-medium border border-border-subtle/70 transition-colors flex items-center gap-1.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40" data-prompt="Need ₹4 lakh working capital for my handicraft handloom unit in Varanasi. Annual income is ₹2.5 lakh." type="button">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span>₹4L Handloom Artisan, Varanasi</span>
+</button>
+</div>
+</div>
+<!-- Trust Stamp Bar -->
+<div class="pt-1 flex flex-wrap items-center justify-between gap-2 text-[11px] text-text-muted">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span>Deterministic Rule Engine • Zero automated hallucination • Grounded in central &amp; state gazettes</span>
+</div>
+<span id="last-parsed-text">Ready for submission</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pipeline Loading Animation Container (Hidden initially) -->
+<section class="hidden w-full py-8 transition-all duration-300" id="pipeline-loader">
+<div class="max-w-[720px] mx-auto px-4">
+<div class="bg-surface-card rounded-2xl p-6 sm:p-8 border border-border-subtle shadow-md flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-border-subtle pb-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary animate-ping"></span>
+<span class="font-bold text-sm text-primary uppercase tracking-wide">Processing Statutory Evaluation</span>
+</div>
+<span class="text-xs text-text-muted font-mono" id="pipeline-timer">Step 1 of 3</span>
+</div>
+<!-- Step Indicators inside Loader Modal -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-subtle transition-all" id="loader-step-1">
+<div class="loader-step-icon w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-xs font-bold shrink-0">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary">1. Parsing socio-economic parameters</span>
+<span class="text-[11px] text-text-secondary">Extracting requirement, activity sector, income band &amp; location</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-subtle/50 opacity-50 transition-all" id="loader-step-2">
+<div class="loader-step-icon w-7 h-7 rounded-full bg-surface-container text-text-muted flex items-center justify-center text-xs font-bold shrink-0">
+                2
+              </div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary">2. Ministry Rule Cross-Examination</span>
+<span class="text-[11px] text-text-secondary">Comparing caps against PMEGP, Udyam Nidhi, and NBCFDC guidelines</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-subtle/50 opacity-50 transition-all" id="loader-step-3">
+<div class="loader-step-icon w-7 h-7 rounded-full bg-surface-container text-text-muted flex items-center justify-center text-xs font-bold shrink-0">
+                3
+              </div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary">3. Calculating Financial Fitness &amp; Subsidy Ranking</span>
+<span class="text-[11px] text-text-secondary">Ordering schemes by lowest annual borrowing cost &amp; repayment comfort</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Container (Revealed after submission) -->
+<section class="w-full pb-16 flex flex-col gap-10 transition-opacity duration-500 ease-out" id="results-container">
+<!-- Extracted Parameters: "What We Understood" -->
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 w-full">
+<!-- Three-stage confirmation strip with sequential checkmark animation support -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8" id="pipeline-breakdown">
+<div class="pipeline-strip-item bg-surface-card rounded-lg p-3.5 border border-border-subtle flex items-start gap-3 shadow-sm transition-all duration-300" id="strip-step-1">
+<div class="strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all">
+<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary">1. Requirement Parsed</span>
+<span class="text-[11px] text-text-secondary">5 validated socio-economic parameters</span>
+</div>
+</div>
+<div class="pipeline-strip-item bg-surface-card rounded-lg p-3.5 border border-border-subtle flex items-start gap-3 shadow-sm transition-all duration-300" id="strip-step-2">
+<div class="strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all">
+<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary">2. Ministry Rules Checked</span>
+<span class="text-[11px] text-text-secondary">Cross-matched against Central &amp; State Gazettes</span>
+</div>
+</div>
+<div class="pipeline-strip-item bg-surface-card rounded-lg p-3.5 border border-border-subtle flex items-start gap-3 shadow-sm transition-all duration-300" id="strip-step-3">
+<div class="strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all">
+<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-text-primary">3. Options Ranked</span>
+<span class="text-[11px] text-text-secondary">Sorted by interest subsidy &amp; repayment comfort</span>
+</div>
+</div>
+</div>
+<!-- Structured Attributes Bento -->
+<div class="bg-surface-card rounded-2xl p-6 lg:p-7 border border-border-subtle shadow-sm flex flex-col gap-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-lg font-bold text-primary tracking-tight">What we understood</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider bg-status-info-bg text-status-info-text uppercase">
+                  Deterministic Parsing
+                </span>
+</div>
+<p class="text-xs text-text-muted mt-0.5">
+                Structured parameters extracted directly from your statement
+              </p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-subtle hover:bg-surface-container text-text-primary text-xs font-bold transition-colors self-start sm:self-auto border border-border-subtle cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/30" id="edit-criteria-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">edit</span>
+<span>Edit description</span>
+</button>
+</div>
+<!-- Parameter Pills -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3 pt-1">
+<div class="flex flex-col gap-1 p-3.5 bg-surface-subtle/70 rounded-xl border border-border-subtle/50">
+<span class="text-[11px] text-text-muted uppercase font-bold tracking-wide">Purpose</span>
+<span class="text-sm font-bold text-text-primary" id="param-purpose">Start a Business</span>
+<span class="text-[11px] text-text-secondary" id="param-subpurpose">Greenfield setup</span>
+</div>
+<div class="flex flex-col gap-1 p-3.5 bg-surface-subtle/70 rounded-xl border border-border-subtle/50">
+<span class="text-[11px] text-text-muted uppercase font-bold tracking-wide">Business Type</span>
+<span class="text-sm font-bold text-text-primary" id="param-type">Tailoring / Artisan</span>
+<span class="text-[11px] text-text-secondary" id="param-subtype">Micro-Enterprise</span>
+</div>
+<div class="flex flex-col gap-1 p-3.5 bg-surface-subtle/70 rounded-xl border border-border-subtle/50">
+<span class="text-[11px] text-text-muted uppercase font-bold tracking-wide">Funding Required</span>
+<span class="text-base font-bold text-primary font-mono" id="param-funding">₹1,20,000</span>
+<span class="text-[11px] text-secondary font-semibold">Within micro-cap limits</span>
+</div>
+<div class="flex flex-col gap-1 p-3.5 bg-surface-subtle/70 rounded-xl border border-border-subtle/50">
+<span class="text-[11px] text-text-muted uppercase font-bold tracking-wide">Annual Income</span>
+<span class="text-sm font-bold text-text-primary" id="param-income">₹3,00,000</span>
+<span class="text-[11px] text-text-secondary">Eligible tier (&lt; ₹4.5L)</span>
+</div>
+<div class="flex flex-col gap-1 p-3.5 bg-surface-subtle/70 rounded-xl border border-border-subtle/50 col-span-2 md:col-span-1">
+<span class="text-[11px] text-text-muted uppercase font-bold tracking-wide">Location</span>
+<span class="text-sm font-bold text-text-primary" id="param-location">Kolkata, WB</span>
+<span class="text-[11px] text-text-secondary">Urban / Semi-Urban Zone</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Results Header & Sort Controls -->
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 w-full flex flex-col gap-4">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<h2 class="text-2xl font-bold text-primary tracking-tight">Suitable schemes for you</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-status-success-bg text-status-success-text text-xs font-bold" id="results-count-badge">
+                3 Available
+              </span>
+</div>
+<p class="text-sm text-text-secondary">
+              Ranked strictly against verified ministry guidelines, interest rates, capital subsidies, and moratorium comfort.
+            </p>
+</div>
+<!-- Sorters -->
+<div class="flex items-center gap-1.5 self-start md:self-auto overflow-x-auto text-xs pb-1 md:pb-0">
+<span class="text-text-muted mr-1 font-medium">Sort:</span>
+<button class="sort-btn px-3 py-1.5 rounded-md bg-primary-container text-on-primary font-semibold shadow-sm" data-sort="best">Best match</button>
+<button class="sort-btn px-3 py-1.5 rounded-md bg-surface-card hover:bg-surface-subtle text-text-secondary border border-border-subtle font-medium transition-colors" data-sort="interest">Lowest interest</button>
+<button class="sort-btn px-3 py-1.5 rounded-md bg-surface-card hover:bg-surface-subtle text-text-secondary border border-border-subtle font-medium transition-colors" data-sort="loan">Highest loan limit</button>
+</div>
+</div>
+<!-- Gazette Grounding Notice -->
+<div class="bg-surface-subtle rounded-xl px-4 py-2.5 border border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-text-secondary text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[17px]">verified</span>
+<span><strong>Grounded in gazette rules:</strong> Evaluated without algorithmic credit-scoring bias or commercial commissions.</span>
+</div>
+<span class="text-text-muted whitespace-nowrap">Ministry of MSME &amp; DFS Guidelines</span>
+</div>
+</div>
+<!-- Schemes List -->
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 w-full flex flex-col gap-6" id="schemes-card-list">
+<!-- CARD 1: PMEGP (Recommended) -->
+<article class="scheme-card bg-surface-card rounded-2xl p-6 lg:p-7 shadow-[0_4px_20px_rgba(27,54,93,0.06)] ring-2 ring-primary/20 border border-primary/20 relative flex flex-col gap-5 transition-all">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-status-success-bg text-status-success-text font-bold">
+<span class="material-symbols-outlined text-[15px]">stars</span>
+                RECOMMENDED • BEST FIT
+              </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-status-info-bg text-status-info-text font-semibold">
+                Subsidy Linked (15%–35%)
+              </span>
+<span class="text-text-muted text-[11px]">Source: Official Gazette Guidelines 2024</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-secondary font-bold tracking-wide uppercase">Match Confidence: High</span>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="max-w-2xl">
+<h3 class="text-xl font-bold text-primary tracking-tight scheme-title">
+                Term Loan (PMEGP / Prime Minister Employment Generation Programme)
+              </h3>
+<p class="text-sm text-text-secondary mt-1 leading-relaxed">
+                Strong match for your funding requirement. Designed explicitly for setting up micro-enterprises in tailoring, handloom, and service sectors with credit-linked capital subsidy up to 35%.
+              </p>
+</div>
+<!-- Fast Facts Bento -->
+<div class="grid grid-cols-3 gap-3 bg-surface-subtle p-3.5 rounded-xl shrink-0 lg:w-[420px] border border-border-subtle/60">
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Maximum Loan</span>
+<span class="text-lg font-bold text-primary">₹45 Lakh</span>
+<span class="text-[11px] text-text-secondary">Project ceiling</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Interest Rate</span>
+<span class="text-lg font-bold text-secondary">8.0% <span class="text-xs font-normal text-text-muted">p.a.</span></span>
+<span class="text-[11px] text-text-secondary">Concessional</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Repayment</span>
+<span class="text-lg font-bold text-text-primary">7 Years</span>
+<span class="text-[11px] text-text-secondary">6-mo moratorium</span>
+</div>
+</div>
+</div>
+<!-- Reasoning points -->
+<div class="bg-surface-ivory rounded-xl p-4 border border-border-subtle/70 flex flex-col gap-1.5">
+<span class="text-xs text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+              Why this scheme fits your profile:
+            </span>
+<ul class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1 text-xs text-text-primary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Income Qualified:</strong> Annual family income falls within target priority criteria.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Loan Bracket:</strong> Your requirement is fully eligible without secondary collateral.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Activity Alignment:</strong> Shop equipment and machinery fall under recognized artisan lists.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<div class="flex items-center gap-2 text-text-muted text-xs">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span>Disbursed through: State Bank of India, Punjab National Bank, UCO Bank</span>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<a class="text-xs text-text-secondary hover:text-primary px-3 py-2 font-semibold transition-colors flex items-center gap-1" href="#">
+<span>View gazette rules</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<button class="select-scheme-btn h-10 px-5 rounded-lg bg-primary text-on-primary text-xs font-semibold shadow-sm flex items-center gap-2 transition-all cursor-pointer" data-scheme="PMEGP" type="button">
+<span>Selected</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2: Udyam Nidhi Yojana -->
+<article class="scheme-card bg-surface-card rounded-2xl p-6 lg:p-7 shadow-sm border border-border-subtle relative flex flex-col gap-5 hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success-bg text-status-success-text font-bold">
+<span class="material-symbols-outlined text-[15px]">check</span>
+                Eligible
+              </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-subtle text-text-secondary font-medium">
+                State-Specific Category
+              </span>
+<span class="text-text-muted text-[11px]">Source: West Bengal Micro-Enterprise Directorate</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-muted uppercase font-medium">General Fit</span>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="max-w-2xl">
+<h3 class="text-xl font-bold text-primary tracking-tight scheme-title">
+                Udyam Nidhi Yojana
+              </h3>
+<p class="text-sm text-text-secondary mt-1 leading-relaxed">
+                Quick working-capital disbursement intended for micro units and traditional artisan clusters. Fast-tracked branch verification with regional cooperative banks.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-3 bg-surface-subtle p-3.5 rounded-xl shrink-0 lg:w-[420px] border border-border-subtle/60">
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Maximum Loan</span>
+<span class="text-lg font-bold text-primary">₹4.50 Lakh</span>
+<span class="text-[11px] text-text-secondary">Working capital</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Interest Rate</span>
+<span class="text-lg font-bold text-text-primary">13%–15%</span>
+<span class="text-[11px] text-text-secondary">Commercial tier</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Repayment</span>
+<span class="text-lg font-bold text-text-primary">5 Years</span>
+<span class="text-[11px] text-text-secondary">No moratorium</span>
+</div>
+</div>
+</div>
+<!-- Match points -->
+<div class="bg-surface-ivory rounded-xl p-4 border border-border-subtle/70 flex flex-col gap-1.5">
+<span class="text-xs text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+              Matching Points:
+            </span>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-xs text-text-primary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Income fulfilled:</strong> Household income meets non-creamy layer criteria.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Amount fits cap:</strong> Sum requested is comfortably within the ₹4.50 Lakh ceiling.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<span class="text-xs text-text-muted">Partnered NBFCs and Urban Cooperative Banks across Greater Kolkata</span>
+<button class="select-scheme-btn h-10 px-5 rounded-lg bg-surface-subtle hover:bg-surface-container text-text-primary text-xs font-semibold shadow-sm border border-border-subtle flex items-center gap-2 transition-all self-end sm:self-auto cursor-pointer" data-scheme="Udyam Nidhi" type="button">
+<span>Add to Compare</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Micro Finance Scheme -->
+<article class="scheme-card bg-surface-card rounded-2xl p-6 lg:p-7 shadow-sm border border-border-subtle relative flex flex-col gap-5 hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-status-success-bg text-status-success-text font-bold">
+<span class="material-symbols-outlined text-[15px]">check</span>
+                Eligible
+              </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-status-info-bg text-status-info-text font-semibold">
+                Lowest Annual Rate
+              </span>
+<span class="text-text-muted text-[11px]">Source: NBCFDC Micro-Finance Window</span>
+</div>
+<div class="text-right">
+<span class="text-xs text-text-muted uppercase font-medium">Targeted Micro-Grant</span>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+<div class="max-w-2xl">
+<h3 class="text-xl font-bold text-primary tracking-tight scheme-title">
+                Micro Finance Scheme (Artisan Special Window)
+              </h3>
+<p class="text-sm text-text-secondary mt-1 leading-relaxed">
+                Direct micro-credit window providing loans directly or through Self-Help Groups (SHGs) with exceptionally low interest. Tailor-made for solo crafts and equipment purchase.
+              </p>
+</div>
+<div class="grid grid-cols-3 gap-3 bg-surface-subtle p-3.5 rounded-xl shrink-0 lg:w-[420px] border border-border-subtle/60">
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Maximum Loan</span>
+<span class="text-lg font-bold text-primary">₹1.25 Lakh</span>
+<span class="text-[11px] text-text-secondary">Per beneficiary</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Interest Rate</span>
+<span class="text-lg font-bold text-secondary">6.5% <span class="text-xs font-normal text-text-muted">p.a.</span></span>
+<span class="text-[11px] text-text-secondary">Subsidized</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[11px] text-text-muted uppercase font-semibold">Repayment</span>
+<span class="text-lg font-bold text-text-primary">3 Years</span>
+<span class="text-[11px] text-text-secondary">Quarterly cycles</span>
+</div>
+</div>
+</div>
+<!-- Reasoning points -->
+<div class="bg-surface-ivory rounded-xl p-4 border border-border-subtle/70 flex flex-col gap-1.5">
+<span class="text-xs text-text-primary font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+              Matching Points:
+            </span>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-xs text-text-primary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Exact capital match:</strong> Covers the entire requested equipment outlay.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">check_circle</span>
+<span><strong>Minimal friction:</strong> Single guarantor or SHG endorsement recognized.</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<span class="text-xs text-text-muted">Administered via State Channelising Agencies (SCA) &amp; District Lead Bank</span>
+<button class="select-scheme-btn h-10 px-5 rounded-lg bg-surface-subtle hover:bg-surface-container text-text-primary text-xs font-semibold shadow-sm border border-border-subtle flex items-center gap-2 transition-all self-end sm:self-auto cursor-pointer" data-scheme="Micro Finance" type="button">
+<span>Add to Compare</span>
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Comparison Callout Banner -->
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 w-full">
+<section class="bg-primary text-on-primary rounded-2xl p-7 lg:p-10 relative overflow-hidden shadow-xl">
+<div class="absolute -right-10 -bottom-10 w-72 h-72 rounded-full bg-surface-tint/15 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="max-w-2xl flex flex-col gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-card/15 text-primary-fixed text-xs font-bold uppercase tracking-wider w-max">
+                Step 2 Preview: Side-by-Side Simulation
+              </span>
+<h2 class="text-2xl lg:text-3xl font-bold text-on-primary tracking-tight">
+                Want to see which option works best financially?
+              </h2>
+<p class="text-sm text-on-primary-container leading-relaxed">
+                Compare estimated monthly EMIs, subsidy grant calculations (up to ₹42,000 for tailoring), and find verified nearby nodal bank branches side-by-side.
+              </p>
+</div>
+<div class="shrink-0">
+<button class="h-12 px-7 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 text-sm font-semibold shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.99] cursor-pointer" id="proceed-compare-btn" type="button">
+<span id="proceed-btn-label">Compare 1 scheme</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</section>
+</main>
+<!-- Floating Sticky Action Dock (Smooth slide up/down on action/edit) -->
+<aside aria-label="Floating Scheme Comparison Bar" class="floating-compare-bar fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-400 ease-out opacity-100 translate-y-0" id="floating-compare-dock">
+<button class="flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-[#1B365D] text-white shadow-[0_12px_36px_rgba(27,54,93,0.38)] border border-white/15 hover:bg-[#002046] hover:shadow-[0_16px_40px_rgba(27,54,93,0.48)] transition-all duration-200 active:scale-[0.98] group cursor-pointer focus:outline-none focus:ring-4 focus:ring-secondary/40" id="floating-compare-action-btn" type="button">
+<div class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[17px]">balance</span>
+</div>
+<div class="flex items-center gap-2 text-sm font-semibold tracking-wide">
+<span>Compare the schemes</span>
+<span class="px-2 py-0.5 rounded-full bg-white/15 text-primary-fixed text-xs font-bold tabular-nums" id="floating-badge-count">(3 schemes found)</span>
+</div>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</button>
+</aside>
+<!-- Footer -->
+<footer class="w-full bg-surface-subtle border-t border-border-subtle/80 py-12 mt-auto">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-6 flex flex-col gap-8">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-6 border-b border-border-subtle">
+<div class="max-w-md">
+<div class="flex items-center gap-2 mb-2">
+<img alt="ALIGN Brand Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UPPipwrd60xK5hCqRt6HCT26Yi5YYN7VEKTygGVMe0JjRHKPYi0C3_l8zA4ol_Ov7qsIyhbzHGPz_F4RkjkneJZZawDOp0HhwbkChfZ2eKPsg1ddRzJl8Z1NORJD7Lz-nF26qGr8SReR0Ly_z0q5Qn4I-uSP_bFn0BEUWSCKhYd1tP5cWQVRy674UmZ3_pPtwVmOmrQMS2YDlx1IiG4jPwd2_I1yOSUdj7-tNnDO7S0Dj73L5kXWHSyLnl"/>
+</div>
+<p class="text-xs text-text-secondary leading-relaxed">
+            ALIGN is a verified public financial discovery utility, simplifying regulatory gazettes into deterministic decision support for micro-entrepreneurs.
+          </p>
+</div>
+<nav class="flex flex-wrap items-center gap-6 text-xs text-text-secondary font-medium">
+<a class="hover:text-text-primary transition-colors" href="#">How it works</a>
+<a class="hover:text-text-primary transition-colors" href="#">Schemes</a>
+<a class="hover:text-text-primary transition-colors" href="#">About</a>
+<a class="hover:text-text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-text-primary transition-colors" href="#">Terms</a>
+</nav>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-muted">
+<p>Source: Official scheme guidelines &amp; verified institutional frameworks.</p>
+<p>© 2025 ALIGN Public Financial Initiative. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Interactive JavaScript with Full Logic -->
+<script>
+    (function() {
+      // Rotating Prompts for dynamic typing placeholder
+      const rotatingPrompts = [
+        "I need ₹1.2 lakh to start a tailoring business in Kolkata...",
+        "Looking for ₹15 lakh term loan for dairy machinery in Pune...",
+        "Need ₹4 lakh working capital for my handicraft handloom unit in Varanasi...",
+        "I need ₹2 lakh to open a food processing kiosk in Patna...",
+        "Looking for ₹80,000 artisan grant for pottery workshop in Jaipur..."
+      ];
+
+      const textarea = document.getElementById('need-input');
+      const clearBtn = document.getElementById('clear-prompt-btn');
+      const findBtn = document.getElementById('find-schemes-btn');
+      const findBtnText = document.getElementById('find-btn-text');
+      const findBtnIcon = document.getElementById('find-btn-icon');
+      const chips = document.querySelectorAll('.preset-chip');
+      const loader = document.getElementById('pipeline-loader');
+      const resultsSection = document.getElementById('results-container');
+      const editBtn = document.getElementById('edit-criteria-btn');
+      const heroSection = document.getElementById('hero-query-section');
+      const lastParsedText = document.getElementById('last-parsed-text');
+      const step1Icon = document.querySelector('#loader-step-1 .loader-step-icon');
+      const step2Box = document.getElementById('loader-step-2');
+      const step3Box = document.getElementById('loader-step-3');
+      const timerText = document.getElementById('pipeline-timer');
+      const proceedCompareBtn = document.getElementById('proceed-compare-btn');
+      const proceedBtnLabel = document.getElementById('proceed-btn-label');
+      const pipelineStepStatus = document.getElementById('pipeline-status-step');
+      const pipelineDetailStatus = document.getElementById('pipeline-status-detail');
+
+      // Floating Dock Elements
+      const floatingDock = document.getElementById('floating-compare-dock');
+      const floatingBadgeCount = document.getElementById('floating-badge-count');
+      const floatingActionBtn = document.getElementById('floating-compare-action-btn');
+
+      // 3-step confirmation strip boxes
+      const stripStep1 = document.getElementById('strip-step-1');
+      const stripStep2 = document.getElementById('strip-step-2');
+      const stripStep3 = document.getElementById('strip-step-3');
+      const stripItems = [stripStep1, stripStep2, stripStep3];
+
+      let currentPromptIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let isTypingActive = true;
+      let typingTimer = null;
+      let isAnalyzing = false;
+
+      // Floating compare dock show/hide helpers
+      function hideFloatingDock() {
+        if (!floatingDock) return;
+        floatingDock.classList.remove('opacity-100', 'translate-y-0');
+        floatingDock.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+      }
+
+      function showFloatingDock(count = 3) {
+        if (!floatingDock) return;
+        floatingBadgeCount.textContent = `(${count} schemes found)`;
+        floatingDock.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+        floatingDock.classList.add('opacity-100', 'translate-y-0');
+      }
+
+      // Typewriter Effect inside placeholder
+      function typeWriter() {
+        if (!isTypingActive || textarea.value.length > 0) return;
+
+        const currentText = rotatingPrompts[currentPromptIndex];
+
+        if (isDeleting) {
+          textarea.placeholder = currentText.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          textarea.placeholder = currentText.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let speed = isDeleting ? 30 : 65;
+
+        if (!isDeleting && charIndex === currentText.length) {
+          speed = 2200; // Pause at end of sentence
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          currentPromptIndex = (currentPromptIndex + 1) % rotatingPrompts.length;
+          speed = 400; // Brief pause before starting next
+        }
+
+        typingTimer = setTimeout(typeWriter, speed);
+      }
+
+      // Initialize typewriter
+      typeWriter();
+
+      // Edit Dismissal Logic:
+      // When user focuses, types, or edits in textarea, hide floating dock smoothly
+      textarea.addEventListener('focus', () => {
+        isTypingActive = false;
+        clearTimeout(typingTimer);
+        hideFloatingDock();
+      });
+
+      textarea.addEventListener('input', () => {
+        hideFloatingDock();
+        if (textarea.value.trim().length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        textarea.value = '';
+        clearBtn.classList.add('hidden');
+        textarea.focus();
+        isTypingActive = true;
+        typeWriter();
+        hideFloatingDock();
+      });
+
+      // Quick chips handling
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          if (isAnalyzing) return;
+          const prompt = chip.getAttribute('data-prompt');
+          textarea.value = prompt;
+          clearBtn.classList.remove('hidden');
+          isTypingActive = false;
+          clearTimeout(typingTimer);
+          // Run analysis automatically on chip select
+          runAnalysis(prompt);
+        });
+      });
+
+      // Search button trigger
+      findBtn.addEventListener('click', () => {
+        if (isAnalyzing) return;
+        const text = textarea.value.trim() || textarea.placeholder || rotatingPrompts[0];
+        if (!textarea.value.trim()) {
+          textarea.value = text;
+          clearBtn.classList.remove('hidden');
+        }
+        runAnalysis(text);
+      });
+
+      // Enter key (without Shift) triggers find
+      textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          if (!isAnalyzing) {
+            findBtn.click();
+          }
+        }
+      });
+
+      // Parse requirement logic
+      function parseRequirement(query) {
+        const lower = query.toLowerCase();
+        let purpose = "Start a Business";
+        let subpurpose = "Greenfield setup";
+        let businessType = "Tailoring / Artisan";
+        let subtype = "Micro-Enterprise";
+        let funding = "₹1,20,000";
+        let income = "₹3,00,000";
+        let location = "Kolkata, WB";
+        let schemeCount = 3;
+
+        if (lower.includes('dairy') || lower.includes('machine') || lower.includes('pune')) {
+          purpose = "Capital Expansion";
+          subpurpose = "Machinery Purchase";
+          businessType = "Agri-Tech & Dairy";
+          subtype = "Small-Enterprise";
+          funding = "₹15,00,000";
+          income = "₹6,00,000";
+          location = "Pune, MH";
+          schemeCount = 3;
+        } else if (lower.includes('handloom') || lower.includes('handicraft') || lower.includes('varanasi')) {
+          purpose = "Working Capital";
+          subpurpose = "Raw materials / inventory";
+          businessType = "Handloom & Craft";
+          subtype = "Traditional Cluster";
+          funding = "₹4,00,000";
+          income = "₹2,50,000";
+          location = "Varanasi, UP";
+          schemeCount = 3;
+        } else if (lower.includes('food') || lower.includes('kiosk') || lower.includes('patna')) {
+          purpose = "Micro Startup";
+          subpurpose = "Retail & food service";
+          businessType = "Food Processing";
+          subtype = "Solo Proprietor";
+          funding = "₹2,00,000";
+          income = "₹2,80,000";
+          location = "Patna, BR";
+          schemeCount = 2;
+        } else {
+          const lakhMatch = query.match(/(₹|rs\.?|inr)?\s*([0-9.]+)\s*(lakh|lakhs|lac|lacs)/i);
+          if (lakhMatch) {
+            funding = `₹${lakhMatch[2]} Lakh`;
+          }
+          if (lower.includes('kolkata')) location = "Kolkata, WB";
+          else if (lower.includes('mumbai')) location = "Mumbai, MH";
+          else if (lower.includes('delhi')) location = "Delhi, NCR";
+          else if (lower.includes('chennai')) location = "Chennai, TN";
+        }
+
+        return { purpose, subpurpose, businessType, subtype, funding, income, location, schemeCount };
+      }
+
+      // Sequential animation of the 3 confirmation strip steps
+      function animateStripSteps() {
+        stripItems.forEach(item => {
+          const iconBox = item.querySelector('.strip-icon-box');
+          iconBox.classList.remove('bg-status-success-bg', 'text-status-success-text');
+          iconBox.classList.add('bg-surface-container', 'text-text-muted');
+          iconBox.innerHTML = `<span class="material-symbols-outlined text-[15px] animate-spin">sync</span>`;
+        });
+
+        setTimeout(() => {
+          const iconBox1 = stripStep1.querySelector('.strip-icon-box');
+          iconBox1.className = 'strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all scale-110';
+          iconBox1.innerHTML = `<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>`;
+          setTimeout(() => iconBox1.classList.remove('scale-110'), 250);
+        }, 300);
+
+        setTimeout(() => {
+          const iconBox2 = stripStep2.querySelector('.strip-icon-box');
+          iconBox2.className = 'strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all scale-110';
+          iconBox2.innerHTML = `<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>`;
+          setTimeout(() => iconBox2.classList.remove('scale-110'), 250);
+        }, 700);
+
+        setTimeout(() => {
+          const iconBox3 = stripStep3.querySelector('.strip-icon-box');
+          iconBox3.className = 'strip-icon-box w-6 h-6 rounded-full bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0 mt-0.5 transition-all scale-110';
+          iconBox3.innerHTML = `<span class="material-symbols-outlined text-[16px] step-check-icon">done</span>`;
+          setTimeout(() => iconBox3.classList.remove('scale-110'), 250);
+        }, 1100);
+      }
+
+      // Complete Analysis Execution & Dynamic Transitions
+      function runAnalysis(query) {
+        isAnalyzing = true;
+        hideFloatingDock();
+
+        // 1. Subtle processing state on the primary button
+        findBtn.disabled = true;
+        findBtn.classList.add('opacity-80', 'cursor-wait');
+        findBtnText.textContent = "Finding suitable schemes...";
+        findBtnIcon.textContent = "sync";
+        findBtnIcon.classList.add('animate-spin');
+
+        // Extract structured parameters
+        const parsed = parseRequirement(query);
+        document.getElementById('param-purpose').textContent = parsed.purpose;
+        document.getElementById('param-subpurpose').textContent = parsed.subpurpose;
+        document.getElementById('param-type').textContent = parsed.businessType;
+        document.getElementById('param-subtype').textContent = parsed.subtype;
+        document.getElementById('param-funding').textContent = parsed.funding;
+        document.getElementById('param-income').textContent = parsed.income;
+        document.getElementById('param-location').textContent = parsed.location;
+        document.getElementById('results-count-badge').textContent = `${parsed.schemeCount} Available`;
+
+        // Smoothly fade results slightly and show step evaluation modal
+        resultsSection.classList.add('opacity-40', 'pointer-events-none');
+        loader.classList.remove('hidden');
+        loader.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        pipelineDetailStatus.textContent = "Validating criteria across Central & State Gazettes...";
+        timerText.textContent = "Step 1 of 3: Parsing syntax...";
+
+        // Step 1 -> Step 2
+        setTimeout(() => {
+          step1Icon.innerHTML = `<span class="material-symbols-outlined text-[16px]">done</span>`;
+          step1Icon.classList.replace('bg-primary-container', 'bg-secondary');
+
+          step2Box.classList.remove('opacity-50');
+          step2Box.classList.add('bg-surface-subtle');
+          step2Box.querySelector('.loader-step-icon').innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>`;
+          step2Box.querySelector('.loader-step-icon').classList.replace('bg-surface-container', 'bg-primary-container');
+          step2Box.querySelector('.loader-step-icon').classList.replace('text-text-muted', 'text-on-primary');
+          timerText.textContent = "Step 2 of 3: Verifying eligibility ceilings...";
+        }, 550);
+
+        // Step 2 -> Step 3
+        setTimeout(() => {
+          step2Box.querySelector('.loader-step-icon').innerHTML = `<span class="material-symbols-outlined text-[16px]">done</span>`;
+          step2Box.querySelector('.loader-step-icon').classList.replace('bg-primary-container', 'bg-secondary');
+
+          step3Box.classList.remove('opacity-50');
+          step3Box.classList.add('bg-surface-subtle');
+          step3Box.querySelector('.loader-step-icon').innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>`;
+          step3Box.querySelector('.loader-step-icon').classList.replace('bg-surface-container', 'bg-primary-container');
+          step3Box.querySelector('.loader-step-icon').classList.replace('text-text-muted', 'text-on-primary');
+          timerText.textContent = "Step 3 of 3: Ranking loan & subsidy fitness...";
+        }, 1100);
+
+        // Finish Evaluation: Animate indicators sequentially, fade results into view, slide up floating dock
+        setTimeout(() => {
+          loader.classList.add('hidden');
+          resultsSection.classList.remove('opacity-40', 'pointer-events-none');
+
+          // Reset button back from loading state
+          findBtn.disabled = false;
+          findBtn.classList.remove('opacity-80', 'cursor-wait');
+          findBtnText.textContent = "Find suitable schemes";
+          findBtnIcon.textContent = "arrow_forward";
+          findBtnIcon.classList.remove('animate-spin');
+
+          lastParsedText.textContent = "Last parsed: Just now";
+          pipelineDetailStatus.textContent = `${parsed.schemeCount} of 4 schemes verified eligible`;
+
+          // Reset evaluation modal for next execution
+          step1Icon.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>`;
+          step1Icon.classList.replace('bg-secondary', 'bg-primary-container');
+          step2Box.classList.add('opacity-50');
+          step2Box.querySelector('.loader-step-icon').innerHTML = "2";
+          step2Box.querySelector('.loader-step-icon').className = "loader-step-icon w-7 h-7 rounded-full bg-surface-container text-text-muted flex items-center justify-center text-xs font-bold shrink-0";
+          step3Box.classList.add('opacity-50');
+          step3Box.querySelector('.loader-step-icon').innerHTML = "3";
+          step3Box.querySelector('.loader-step-icon').className = "loader-step-icon w-7 h-7 rounded-full bg-surface-container text-text-muted flex items-center justify-center text-xs font-bold shrink-0";
+
+          // Scroll cleanly to extracted criteria
+          document.getElementById('pipeline-breakdown').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // Run sequential animation on the 3 confirmation cards
+          animateStripSteps();
+
+          // Smoothly slide and fade in the floating compare dock with updated count
+          setTimeout(() => {
+            showFloatingDock(parsed.schemeCount);
+            isAnalyzing = false;
+          }, 350);
+
+        }, 1600);
+      }
+
+      // Edit description button behavior: dismiss floating bar and focus search
+      editBtn.addEventListener('click', () => {
+        hideFloatingDock();
+        heroSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          textarea.focus();
+        }, 300);
+      });
+
+      // Scheme Selection & Comparison logic
+      let compared = new Set(["PMEGP"]);
+      const compareButtons = document.querySelectorAll('.select-scheme-btn');
+
+      function updateProceedBtn() {
+        const count = compared.size;
+        proceedBtnLabel.textContent = `Compare ${count} scheme${count > 1 ? 's' : ''}`;
+      }
+
+      compareButtons.forEach(btn => {
+        const scheme = btn.getAttribute('data-scheme');
+        btn.addEventListener('click', () => {
+          if (compared.has(scheme)) {
+            if (compared.size === 1) {
+              alert('At least one scheme must remain selected for comparative modeling.');
+              return;
+            }
+            compared.delete(scheme);
+            btn.classList.remove('bg-primary', 'text-on-primary');
+            btn.classList.add('bg-surface-subtle', 'text-text-primary');
+            btn.innerHTML = `<span>Add to Compare</span><span class="material-symbols-outlined text-[16px]">add</span>`;
+          } else {
+            compared.add(scheme);
+            btn.classList.remove('bg-surface-subtle', 'text-text-primary');
+            btn.classList.add('bg-primary', 'text-on-primary');
+            btn.innerHTML = `<span>Selected</span><span class="material-symbols-outlined text-[16px]">check</span>`;
+          }
+          updateProceedBtn();
+        });
+      });
+
+      // Trigger action from bottom floating action dock
+      if (floatingActionBtn) {
+        floatingActionBtn.addEventListener('click', () => {
+          alert(`Proceeding to Step 2: Comparing schemes side-by-side with interest subsidy & repayment simulations.`);
+        });
+      }
+
+      if (proceedCompareBtn) {
+        proceedCompareBtn.addEventListener('click', () => {
+          alert(`Proceeding to Step 2: Side-by-side comparison for ${Array.from(compared).join(', ')}.`);
+        });
+      }
+
+      // Sorter toggles
+      const sortButtons = document.querySelectorAll('.sort-btn');
+      sortButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sortButtons.forEach(b => {
+            b.className = "sort-btn px-3 py-1.5 rounded-md bg-surface-card hover:bg-surface-subtle text-text-secondary border border-border-subtle font-medium transition-colors cursor-pointer";
+          });
+          btn.className = "sort-btn px-3 py-1.5 rounded-md bg-primary-container text-on-primary font-semibold shadow-sm cursor-pointer";
+        });
+      });
+
+    })();
+  </script>
+</body></html>
