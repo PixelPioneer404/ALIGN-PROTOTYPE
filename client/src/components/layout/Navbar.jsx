@@ -65,8 +65,8 @@ export default function Navbar() {
       <div className="max-w-[1240px] mx-auto px-4 lg:px-6 h-16 flex items-center justify-between gap-4">
         {/* Brand Logo & Authority Label */}
         <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-primary-container to-primary flex items-center justify-center shadow-[0_2px_8px_rgba(0,32,70,0.25)] group-hover:scale-105 transition-all border border-white/25">
-            <span className="text-white font-black text-xl tracking-tighter">A</span>
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-black flex items-center justify-center shadow-[0_2px_8px_rgba(0,32,70,0.25)] group-hover:scale-105 transition-all border border-border-subtle/80">
+            <img src="/logo.jpg" alt="ALIGN Logo" className="w-full h-full object-cover" />
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-surface-ivory shadow-xs"></span>
           </div>
           <div className="flex flex-col">

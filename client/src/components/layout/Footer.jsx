@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 lg:px-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-border-subtle/80">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-base">
-              A
+            <div className="w-8 h-8 rounded-lg overflow-hidden bg-black flex items-center justify-center border border-border-subtle shrink-0">
+              <img src="/logo.jpg" alt="ALIGN Logo" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="font-bold text-text-primary text-base leading-none">ALIGN</p>
