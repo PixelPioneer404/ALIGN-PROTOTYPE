@@ -2,19 +2,24 @@ import geminiService from '../services/gemini.service.js';
 
 export const analyzeRequirement = async (req, res, next) => {
   try {
-    const { prompt } = req.body;
+    const { prompt, messages } = req.body;
 
-    if (!prompt || typeof prompt !== 'string') {
+    let conversation = [];
+    if (messages && Array.isArray(messages)) {
+      conversation = messages;
+    } else if (prompt && typeof prompt === 'string') {
+      conversation = [{ role: 'user', content: prompt }];
+    } else {
       return res.status(400).json({
         success: false,
         error: {
           code: 'MISSING_PROMPT',
-          message: 'The prompt field is required and must be a string.'
+          message: 'A prompt or messages array is required.'
         }
       });
     }
 
-    if (prompt.trim().length < 5) {
+    if (conversation.length === 0) {
       return res.status(400).json({
         success: false,
         error: {
@@ -25,22 +30,24 @@ export const analyzeRequirement = async (req, res, next) => {
     }
 
     // Call AI service
-    const extracted = await geminiService.extractRequirement(prompt.trim());
+    const response = await geminiService.extractRequirementConversational(conversation);
 
-    // Defensive server-side sanity checks
-    if (!extracted.amount || extracted.amount <= 0) {
-      extracted.amount = 120000;
-    }
-    if (extracted.annualFamilyIncome === undefined || extracted.annualFamilyIncome < 0) {
-      extracted.annualFamilyIncome = 300000;
-    }
-    if (!extracted.location) {
-      extracted.location = 'Kolkata';
+    if (response.isComplete && response.extracted) {
+      // Defensive server-side sanity checks
+      if (!response.extracted.amount || response.extracted.amount <= 0) {
+        response.extracted.amount = 120000;
+      }
+      if (response.extracted.annualFamilyIncome === undefined || response.extracted.annualFamilyIncome < 0) {
+        response.extracted.annualFamilyIncome = 300000;
+      }
+      if (!response.extracted.location) {
+        response.extracted.location = 'Kolkata';
+      }
     }
 
     res.json({
       success: true,
-      data: extracted
+      data: response
     });
   } catch (err) {
     next(err);

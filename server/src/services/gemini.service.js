@@ -110,25 +110,39 @@ function fallbackWhatIf(currentScenario, query) {
 export class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || null;
+    // gemini-1.5-flash is free on non-billing Google AI Studio accounts (15 RPM, 1M TPM, 1,500 RPD)
+    this.modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
     this.useMock = process.env.USE_MOCK_AI === 'true' || !this.apiKey;
     if (this.apiKey) {
       this.genAI = new GoogleGenerativeAI(this.apiKey);
     }
   }
 
-  async extractRequirement(prompt) {
-    if (!prompt || typeof prompt !== 'string' || prompt.trim().length < 5) {
-      throw new Error('Prompt must be at least 5 characters long.');
+  async extractRequirementConversational(messages) {
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+      throw new Error('Messages array is required.');
     }
+
+    const fullText = messages.map(m => `${m.role}: ${m.content}`).join('\n');
 
     if (this.useMock || !this.genAI) {
       console.log('[GeminiService] Using resilient NLP extractor (no API key / mock mode)');
-      return fallbackExtractRequirement(prompt);
+      // For mock, just pretend it's complete if it's long enough, else ask
+      if (fullText.length < 20 && messages.length === 1) {
+        return {
+          isComplete: false,
+          nextQuestion: "Could you tell me what kind of business you want to start, how much loan you need, your annual family income, and where you live?"
+        };
+      }
+      return {
+        isComplete: true,
+        extracted: fallbackExtractRequirement(fullText)
+      };
     }
 
     try {
       const model = this.genAI.getGenerativeModel({
-        model: 'gemini-1.5-flash',
+        model: this.modelName,
         generationConfig: {
           temperature: 0.0,
           responseMimeType: 'application/json',
@@ -137,38 +151,51 @@ export class GeminiService {
 
       const systemInstruction = `
 You are an expert financial requirement parser for ALIGN, an Indian government scheme discovery platform.
-Given an applicant's natural language requirement, extract structured parameters into JSON.
-Return strictly a JSON object with:
-- purpose: one of ["business", "education", "agriculture", "services", "other"]
-- businessType: string (e.g. "tailoring", "dairy", "retail")
+Given a conversation history between an applicant and an AI assistant, extract structured parameters.
+The mandatory fields needed to find a scheme are:
+- businessType: the type of business or purpose (e.g. "tailoring", "dairy", "retail", "education")
 - amount: integer in INR (e.g. 1.2 lakh becomes 120000)
 - annualFamilyIncome: integer in INR (e.g. 3 lakh becomes 300000)
 - location: string (city or district, e.g. "Kolkata")
-- educationStatus: string or null
-Do not include any other markdown or text.
+
+If ANY of the mandatory fields are missing, set "isComplete" to false, and formulate a polite, conversational "nextQuestion" asking ONLY for the missing information.
+If ALL mandatory fields are present, set "isComplete" to true, and provide the "extracted" object.
+
+Return strictly a JSON object matching this schema:
+{
+  "isComplete": boolean,
+  "nextQuestion": string | null,
+  "extracted": {
+    "purpose": string (one of ["business", "education", "agriculture", "services", "other"]),
+    "businessType": string,
+    "amount": number,
+    "annualFamilyIncome": number,
+    "location": string,
+    "educationStatus": string | null
+  } | null
+}
 `;
 
       const result = await model.generateContent([
         { text: systemInstruction },
-        { text: `Applicant statement: "${prompt}"` }
+        { text: `Conversation:\n${fullText}` }
       ]);
 
       const text = result.response.text();
       const parsed = JSON.parse(text);
 
-      return {
-        purpose: parsed.purpose || "business",
-        businessType: parsed.businessType || "tailoring",
-        amount: Number(parsed.amount) || 120000,
-        annualFamilyIncome: Number(parsed.annualFamilyIncome) || 300000,
-        location: parsed.location || "Kolkata",
-        educationStatus: parsed.educationStatus || null,
-        extractedAt: new Date().toISOString(),
-        source: "gemini-1.5-flash"
-      };
+      if (parsed.isComplete && parsed.extracted) {
+        parsed.extracted.extractedAt = new Date().toISOString();
+        parsed.extracted.source = this.modelName;
+      }
+
+      return parsed;
     } catch (err) {
       console.warn('[GeminiService] Gemini API call failed, falling back to local extractor:', err.message);
-      return fallbackExtractRequirement(prompt);
+      return {
+        isComplete: true,
+        extracted: fallbackExtractRequirement(fullText)
+      };
     }
   }
 
@@ -179,7 +206,7 @@ Do not include any other markdown or text.
 
     try {
       const model = this.genAI.getGenerativeModel({
-        model: 'gemini-1.5-flash',
+        model: this.modelName,
         generationConfig: {
           temperature: 0.0,
           responseMimeType: 'application/json',

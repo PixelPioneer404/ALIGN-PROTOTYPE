@@ -99,7 +99,7 @@ export class RAGService {
     if (geminiService.genAI && !geminiService.useMock) {
       try {
         const model = geminiService.genAI.getGenerativeModel({
-          model: 'gemini-1.5-flash',
+          model: geminiService.modelName || 'gemini-1.5-flash',
           generationConfig: { temperature: 0.1 }
         });
 

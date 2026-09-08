@@ -126,6 +126,79 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Why ALIGN vs Generic AI Section */}
+      <section className="py-16 bg-surface-ivory">
+        <div className="max-w-[1200px] mx-auto px-4 lg:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-status-error-text uppercase tracking-widest bg-status-error-bg px-3 py-1 rounded-full">
+              The Hallucination Problem
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-primary mt-4">
+              Why not just ask ChatGPT or Gemini?
+            </h2>
+            <p className="font-sans text-base text-text-secondary mt-3 leading-relaxed">
+              Generic Large Language Models (LLMs) are great at conversation, but they <strong className="text-status-error-text">hallucinate</strong> interest rates, invent fake government schemes, and fail at complex actuarial math. ALIGN fixes this.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Generic LLM Card */}
+            <div className="p-8 rounded-2xl bg-surface-card border border-status-error-text/20 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-status-error-text/60"></div>
+              <h3 className="font-bold text-xl text-text-primary mb-4 flex items-center gap-2">
+                <span className="text-status-error-text">✕</span> Generic LLMs
+              </h3>
+              <ul className="space-y-4 text-sm text-text-secondary">
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-status-error-text mt-0.5">•</span>
+                  <span><strong>Outdated Databases:</strong> They often recommend closed schemes or ignore recent 2025-26 statutory updates.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-status-error-text mt-0.5">•</span>
+                  <span><strong>Fake Interest Rates:</strong> They hallucinate concessional rates (e.g. 5% p.a.) that don't match the actual NSFDC mandate.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-status-error-text mt-0.5">•</span>
+                  <span><strong>Bad Math:</strong> They struggle with accurate reducing-balance EMI calculations over long tenures.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-status-error-text mt-0.5">•</span>
+                  <span><strong>No Local Context:</strong> They cannot reliably connect you to the exact verified local channel partner in your district.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* ALIGN Architecture Card */}
+            <div className="p-8 rounded-2xl bg-primary text-white shadow-elevated relative overflow-hidden">
+              <div className="absolute -right-10 -top-10 text-white/5">
+                <ShieldCheck className="w-48 h-48" />
+              </div>
+              <h3 className="font-bold text-xl mb-4 flex items-center gap-2 relative z-10">
+                <span className="text-emerald-400">✓</span> The ALIGN Architecture
+              </h3>
+              <ul className="space-y-4 text-sm text-white/90 relative z-10">
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-emerald-400 mt-0.5">•</span>
+                  <span><strong>AI Only for Intent:</strong> We use Gemini strictly to understand your English (or local language) input and extract structured parameters.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-emerald-400 mt-0.5">•</span>
+                  <span><strong>Deterministic Rules:</strong> All eligibility limits, caps, and rates are hardcoded into a traditional Rule Engine based on official circulars.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-emerald-400 mt-0.5">•</span>
+                  <span><strong>Actuarial Math:</strong> EMIs are calculated precisely using standard financial library algorithms, guaranteeing zero math hallucinations.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="font-bold text-emerald-400 mt-0.5">•</span>
+                  <span><strong>Verified Database:</strong> We only fetch State Channelising Agencies directly from the verified ALIGN backend database.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3 Pillars Section */}
       <section className="py-16 bg-surface-card border-y border-border-subtle">
         <div className="max-w-[1200px] mx-auto px-4 lg:px-6">

@@ -64,21 +64,21 @@ export default function Navbar() {
       {/* 2. Main Official Working Navigation Bar */}
       <div className="max-w-[1240px] mx-auto px-4 lg:px-6 h-16 flex items-center justify-between gap-4">
         {/* Brand Logo & Authority Label */}
-        <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-black flex items-center justify-center shadow-[0_2px_8px_rgba(0,32,70,0.25)] group-hover:scale-105 transition-all border border-border-subtle/80">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-black flex items-center justify-center shadow-[0_2px_8px_rgba(0,32,70,0.25)] group-hover:scale-105 transition-all border border-border-subtle/80 shrink-0">
             <img src="/logo.jpg" alt="ALIGN Logo" className="w-full h-full object-cover" />
-            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-surface-ivory shadow-xs"></span>
+            <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500 border-2 border-surface-ivory shadow-xs"></span>
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="font-display font-extrabold text-2xl text-primary tracking-tight leading-none">
+          <div className="flex flex-col min-w-0">
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <span className="font-display font-extrabold text-xl sm:text-2xl text-primary tracking-tight leading-none truncate">
                 ALIGN
               </span>
-              <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 tracking-wider">
+              <span className="hidden sm:inline-block text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 tracking-wider">
                 PORTAL
               </span>
             </div>
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest leading-none mt-1">
+            <span className="hidden sm:block text-[10px] font-bold text-secondary uppercase tracking-widest leading-none mt-1 truncate">
               National Scheme Decision Support
             </span>
           </div>
@@ -133,7 +133,7 @@ export default function Navbar() {
               type="button"
               onClick={resetAll}
               title="Reset session and clear inputs"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-secondary hover:text-status-error-text transition-all px-3 py-1.5 rounded-full border border-border-subtle/80 hover:bg-white/80 hover:shadow-xs"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-secondary hover:text-status-error-text transition-all px-2.5 py-1.5 rounded-full border border-border-subtle/80 hover:bg-white/80 hover:shadow-xs"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Reset</span>
@@ -142,17 +142,18 @@ export default function Navbar() {
 
           <Link
             to="/match"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-container text-white text-xs font-bold transition-all duration-150 shadow-[0_2px_8px_rgba(0,32,70,0.2)] hover:shadow-[0_4px_14px_rgba(0,32,70,0.25)] active:scale-95"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary hover:bg-primary-container text-white text-xs font-bold transition-all duration-150 shadow-[0_2px_8px_rgba(0,32,70,0.2)] hover:shadow-[0_4px_14px_rgba(0,32,70,0.25)] active:scale-95"
           >
-            <span>Find Schemes</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Find Schemes</span>
+            <span className="sm:hidden">Find</span>
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
           </Link>
 
           {/* Mobile Menu Hamburger */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-[#ECE5DB] transition-colors"
+            className="md:hidden p-1.5 sm:p-2 rounded-xl text-text-secondary hover:text-text-primary hover:bg-[#ECE5DB] transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
