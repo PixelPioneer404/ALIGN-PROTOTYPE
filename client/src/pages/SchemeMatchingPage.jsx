@@ -16,11 +16,10 @@ export default function SchemeMatchingPage() {
     setSelectedScheme,
   } = useAlign();
 
-  const [prompt, setPrompt] = useState(
-    location.state?.prefilledPrompt ||
-    userRequirement?.rawPrompt ||
-    'I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata.'
-  );
+  const [messages, setMessages] = useState([
+    { role: 'ai', content: 'What kind of support are you seeking? Please describe your business, how much capital you need, and your district.' }
+  ]);
+  const [inputValue, setInputValue] = useState('');
 
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isMatching, setIsMatching] = useState(false);
@@ -32,14 +31,19 @@ export default function SchemeMatchingPage() {
 
   // When navigated with prefilled prompt from Landing page, we can auto-analyze or let user click
   useEffect(() => {
-    if (location.state?.prefilledPrompt && !extractedData) {
-      setPrompt(location.state.prefilledPrompt);
+    if (location.state?.prefilledPrompt && messages.length === 1 && !extractedData) {
+      handleUserMessage(location.state.prefilledPrompt);
+      // clear the state so it doesn't trigger again on re-render
+      navigate(location.pathname, { replace: true });
     }
   }, [location.state]);
 
-  const handleAnalyze = async (e) => {
-    e?.preventDefault();
-    if (!prompt.trim()) return;
+  const handleUserMessage = async (msgContent) => {
+    if (!msgContent.trim()) return;
+
+    const newMessages = [...messages, { role: 'user', content: msgContent }];
+    setMessages(newMessages);
+    setInputValue('');
 
     setIsAnalyzing(true);
     setHasSearched(false);
@@ -49,7 +53,7 @@ export default function SchemeMatchingPage() {
       const res = await fetch('/api/analyze-requirement', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: prompt.trim() }),
+        body: JSON.stringify({ messages: newMessages }),
       });
 
       const json = await res.json();
@@ -57,18 +61,27 @@ export default function SchemeMatchingPage() {
         throw new Error(json.error?.message || 'Extraction failed');
       }
 
-      const structured = { ...json.data, rawPrompt: prompt };
-      setExtractedData(structured);
-      setUserRequirement(structured);
+      if (json.data.isComplete && json.data.extracted) {
+        const structured = { ...json.data.extracted, rawPrompt: newMessages.map(m=>m.content).join(' ') };
+        setExtractedData(structured);
+        setUserRequirement(structured);
 
-      // Automatically run deterministic rule engine matching immediately
-      await runMatching(structured);
-      setHasSearched(true);
+        // Automatically run deterministic rule engine matching immediately
+        await runMatching(structured);
+        setHasSearched(true);
+      } else {
+        setMessages([...newMessages, { role: 'ai', content: json.data.nextQuestion || 'Could you provide more details?' }]);
+      }
     } catch (err) {
       setErrorMsg(err.message || 'Failed to analyze requirement.');
     } finally {
       setIsAnalyzing(false);
     }
+  };
+
+  const handleAnalyze = (e) => {
+    e?.preventDefault();
+    handleUserMessage(inputValue);
   };
 
   const runMatching = async (reqData) => {
@@ -134,41 +147,65 @@ export default function SchemeMatchingPage() {
             <span className="text-xs font-normal text-text-muted">No financial jargon required</span>
           </label>
 
+          {/* Chat History */}
+          <div className="flex flex-col gap-3 mb-4 max-h-80 overflow-y-auto p-2 scrollbar-thin scrollbar-thumb-border-strong scrollbar-track-transparent">
+            {messages.map((msg, idx) => (
+              <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`p-3.5 rounded-2xl max-w-[85%] text-sm leading-relaxed ${
+                  msg.role === 'user' 
+                    ? 'bg-primary text-white rounded-br-none shadow-sm' 
+                    : 'bg-surface-subtle text-text-primary rounded-bl-none border border-border-subtle shadow-sm'
+                }`}>
+                  {msg.role === 'ai' && <Sparkles className="w-4 h-4 inline-block mr-2 text-secondary shrink-0 mb-0.5" />}
+                  <span>{msg.content}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div className="relative">
             <textarea
-              rows={3}
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-              placeholder="e.g. I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata."
-              className="w-full p-4 rounded-xl bg-surface-subtle border border-border-subtle text-text-primary text-base placeholder:text-text-muted focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all resize-none"
+              rows={2}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault();
+                  handleAnalyze(e);
+                }
+              }}
+              placeholder="Type your response here... (Press Enter to send)"
+              className="w-full p-4 pr-12 rounded-xl bg-surface-ivory border border-border-subtle text-text-primary text-base placeholder:text-text-muted focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all resize-none shadow-inner-light"
             />
           </div>
 
           {/* Quick Prompt Chips */}
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            <span className="text-xs text-text-muted mr-1">Quick examples:</span>
-            <button
-              type="button"
-              onClick={() => setPrompt('I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata.')}
-              className="px-3 py-1 rounded-full text-xs font-medium bg-surface-subtle hover:bg-surface-container border border-border-subtle text-text-secondary transition-colors"
-            >
-              Tailoring Business (₹1.2L)
-            </button>
-            <button
-              type="button"
-              onClick={() => setPrompt('I want ₹2.5 lakh for an artisan pottery workshop in Kolkata with family income of ₹2.8 lakh.')}
-              className="px-3 py-1 rounded-full text-xs font-medium bg-surface-subtle hover:bg-surface-container border border-border-subtle text-text-secondary transition-colors"
-            >
-              Artisan Workshop (₹2.5L)
-            </button>
-            <button
-              type="button"
-              onClick={() => setPrompt('I need ₹80,000 for purchasing raw fabrics and sewing tools for garment retail in Kolkata.')}
-              className="px-3 py-1 rounded-full text-xs font-medium bg-surface-subtle hover:bg-surface-container border border-border-subtle text-text-secondary transition-colors"
-            >
-              Small Retail (₹80K)
-            </button>
-          </div>
+          {messages.length === 1 && (
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <span className="text-xs font-semibold text-text-muted mr-1">Quick start:</span>
+              <button
+                type="button"
+                onClick={() => handleUserMessage('I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata.')}
+                className="px-3 py-1.5 rounded-full text-xs font-medium bg-surface-ivory hover:bg-surface-subtle border border-border-subtle text-text-secondary transition-all shadow-sm hover:shadow-md"
+              >
+                Tailoring Business (₹1.2L)
+              </button>
+              <button
+                type="button"
+                onClick={() => handleUserMessage('I want ₹2.5 lakh for an artisan pottery workshop in Kolkata with family income of ₹2.8 lakh.')}
+                className="px-3 py-1.5 rounded-full text-xs font-medium bg-surface-ivory hover:bg-surface-subtle border border-border-subtle text-text-secondary transition-all shadow-sm hover:shadow-md"
+              >
+                Artisan Workshop (₹2.5L)
+              </button>
+              <button
+                type="button"
+                onClick={() => handleUserMessage('I need ₹80,000 for purchasing raw fabrics and sewing tools for garment retail in Kolkata.')}
+                className="px-3 py-1.5 rounded-full text-xs font-medium bg-surface-ivory hover:bg-surface-subtle border border-border-subtle text-text-secondary transition-all shadow-sm hover:shadow-md"
+              >
+                Small Retail (₹80K)
+              </button>
+            </div>
+          )}
 
           {/* Action Row */}
           <div className="flex items-center justify-between pt-2 border-t border-border-subtle">
