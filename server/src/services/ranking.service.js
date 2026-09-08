@@ -44,17 +44,37 @@ export class RankingService {
         score += 5;
       }
 
-      // Formulate explainable recommendation rationales
+      // Formulate explainable recommendation rationales dynamically
       if (scheme._id === 'SCHEME-NSFDC-MF-01') {
-        recommendationRationale = 'Top recommendation: Tailored for micro-enterprises with the lowest concessional interest rate (6.5% p.a.) and 3-month moratorium.';
+        recommendationRationale = 'Top concessional recommendation: Lowest fixed interest rate (6.5% p.a.) with 3-month moratorium for micro-enterprises.';
+      } else if (scheme._id === 'SCHEME-PM-VISHWAKARMA-09') {
+        recommendationRationale = 'Artisan empowerment: Highly subsidized 5.0% interest rate, collateral-free credit, plus ₹15,000 toolkit incentive.';
+      } else if (scheme._id === 'SCHEME-MUDRA-SHISHU-06') {
+        recommendationRationale = 'Quick zero-collateral micro-credit up to ₹50,000 for seed inventory, small tools, and street vendor equipment.';
+      } else if (scheme._id === 'SCHEME-MUDRA-KISHORE-07') {
+        recommendationRationale = 'MSME scaling credit up to ₹5 Lakh at 9.5% p.a. with 6-month moratorium for commercial equipment.';
+      } else if (scheme._id === 'SCHEME-MUDRA-TARUN-08') {
+        recommendationRationale = 'Industrial and commercial expansion credit up to ₹10 Lakh for established small enterprises.';
+      } else if (scheme._id === 'SCHEME-PMEGP-10') {
+        recommendationRationale = 'Prime Minister Employment Generation Programme with high credit-linked capital subsidy (15% to 35% margin money).';
+      } else if (scheme._id === 'SCHEME-STANDUP-INDIA-11') {
+        recommendationRationale = 'Flagship bank term-loan (₹10L to ₹1 Crore) dedicated to SC, ST, and Women founders for greenfield ventures.';
+      } else if (scheme._id === 'SCHEME-NABARD-DAIRY-12') {
+        recommendationRationale = 'Specialized dairy and livestock scheme with 25-33% capital subsidy and 6-month animal acclimatization moratorium.';
+      } else if (scheme._id === 'SCHEME-PM-SVANIDHI-13') {
+        recommendationRationale = 'Urban street vendor working capital with 7% interest subsidy on timely repayment and digital cashbacks.';
+      } else if (scheme._id === 'SCHEME-STARTUP-INDIA-SEED-14') {
+        recommendationRationale = 'DPIIT recognized startup seed support with prototype validation grants up to ₹20L and debt up to ₹50L.';
       } else if (scheme._id === 'SCHEME-NSFDC-AMFY-02') {
-        recommendationRationale = 'Accredited microfinance option with fast-track processing, but carries a higher interest rate (15.0% p.a.).';
+        recommendationRationale = 'Accredited microfinance option with fast-track MFI group routing (15.0% p.a.).';
       } else if (scheme._id === 'SCHEME-NSFDC-TL-03') {
-        recommendationRationale = 'Offers higher credit headroom (up to ₹45L) and extended tenure (up to 7 years) if you plan larger capital investments.';
+        recommendationRationale = 'High capital headroom (up to ₹45L) and 7-year repayment window for manufacturing and service setups.';
       } else if (scheme._id === 'SCHEME-NSFDC-UNY-04') {
-        recommendationRationale = 'First-generation enterprise scheme with flexible cooperative and small-finance bank routing.';
+        recommendationRationale = 'First-generation self-employment scheme with flexible cooperative and small-finance bank access.';
+      } else if (scheme._id === 'SCHEME-NSFDC-ELS-05') {
+        recommendationRationale = 'Concessional 6.5% academic loan covering full tuition with repayment moratorium during entire course duration.';
       } else {
-        recommendationRationale = `Qualified government assistance under ${scheme.shortName}.`;
+        recommendationRationale = `Qualified government assistance under ${scheme.shortName} (${scheme.interestRate}% p.a.).`;
       }
 
       return {

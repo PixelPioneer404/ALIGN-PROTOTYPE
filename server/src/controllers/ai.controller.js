@@ -32,22 +32,16 @@ export const analyzeRequirement = async (req, res, next) => {
     // Call AI service
     const response = await geminiService.extractRequirementConversational(conversation);
 
-    if (response.isComplete && response.extracted) {
-      // Defensive server-side sanity checks
-      if (!response.extracted.amount || response.extracted.amount <= 0) {
-        response.extracted.amount = 120000;
-      }
-      if (response.extracted.annualFamilyIncome === undefined || response.extracted.annualFamilyIncome < 0) {
-        response.extracted.annualFamilyIncome = 300000;
-      }
-      if (!response.extracted.location) {
-        response.extracted.location = 'Kolkata';
-      }
-    }
-
     res.json({
       success: true,
-      data: response
+      data: {
+        isComplete: Boolean(response.isComplete),
+        missingFields: response.missingFields || [],
+        detected: response.detected || {},
+        nextQuestion: response.nextQuestion || null,
+        extracted: response.isComplete ? response.extracted : null,
+        clarificationSuggestions: response.clarificationSuggestions || {}
+      }
     });
   } catch (err) {
     next(err);
