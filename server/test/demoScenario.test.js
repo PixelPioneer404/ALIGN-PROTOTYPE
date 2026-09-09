@@ -6,6 +6,8 @@ import financialService from '../src/services/financial.service.js';
 import ragService from '../src/services/rag.service.js';
 import pdfService from '../src/services/pdf.service.js';
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 
 async function runDemoVerification() {
   console.log('============================================================');
@@ -104,7 +106,7 @@ async function runDemoVerification() {
   console.log(`   Process steps: ${selectedScheme.applicationProcess.length} official stages.`);
 
   // Step 20 & 21: Download Application Checklist PDF
-  const testPdfPath = '/tmp/demo_checklist_verification.pdf';
+  const testPdfPath = path.join(os.tmpdir(), 'demo_checklist_verification.pdf');
   const pdfOut = fs.createWriteStream(testPdfPath);
   pdfService.generateChecklistPDF({
     scheme: selectedScheme,

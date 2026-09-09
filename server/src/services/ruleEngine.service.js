@@ -18,15 +18,20 @@ export class RuleEngineService {
       const violations = [];
       const missingInformation = [];
 
-      // 1. Income Ceiling Check (Configurable limit e.g. ₹5,00,000)
-      const schemeIncomeLimit = scheme.incomeLimit || 500000;
-      if (annualFamilyIncome <= schemeIncomeLimit) {
-        reasons.push(
-          `Annual family income (₹${annualFamilyIncome.toLocaleString('en-IN')}) is within statutory ceiling of ₹${schemeIncomeLimit.toLocaleString('en-IN')}.`
-        );
+      // 1. Income Ceiling Check
+      if (scheme.incomeLimit && scheme.incomeLimit > 0) {
+        if (annualFamilyIncome <= scheme.incomeLimit) {
+          reasons.push(
+            `Annual family income (₹${annualFamilyIncome.toLocaleString('en-IN')}) is within statutory ceiling of ₹${scheme.incomeLimit.toLocaleString('en-IN')}.`
+          );
+        } else {
+          violations.push(
+            `Annual family income (₹${annualFamilyIncome.toLocaleString('en-IN')}) exceeds statutory ceiling of ₹${scheme.incomeLimit.toLocaleString('en-IN')}.`
+          );
+        }
       } else {
-        violations.push(
-          `Annual family income (₹${annualFamilyIncome.toLocaleString('en-IN')}) exceeds statutory ceiling of ₹${schemeIncomeLimit.toLocaleString('en-IN')}.`
+        reasons.push(
+          'Scheme has no statutory household income ceiling — accessible to all qualifying applicants.'
         );
       }
 
@@ -41,23 +46,22 @@ export class RuleEngineService {
         );
       }
 
-      // 3. Minimum Project Cost / Range Check (e.g. Term loan requires > ₹1.40L for large projects, but can support scaling)
+      // 3. Minimum Project Cost / Range Check
       if (scheme.minProjectCost && amount < scheme.minProjectCost) {
-        // For Term Loan, note that it typically finances above 1.40L, but check if scalable
         if (scheme.category === 'term_loan' && amount <= 140000) {
           reasons.push(
             `Scheme supports higher project costs up to ₹${(scheme.projectCostLimit / 100000).toFixed(1)}L if enterprise expansion is intended.`
           );
         } else {
           violations.push(
-            `Requested amount is below the scheme minimum project threshold of ₹${scheme.minProjectCost.toLocaleString('en-IN')}.`
+            `Requested amount (₹${amount.toLocaleString('en-IN')}) is below the scheme minimum threshold of ₹${scheme.minProjectCost.toLocaleString('en-IN')}.`
           );
         }
       }
 
       // 4. Purpose / Enterprise Domain Compatibility
       const userPurposes = [
-        purpose.toLowerCase(),
+        (purpose || 'business').toLowerCase(),
         (businessType || '').toLowerCase()
       ].filter(Boolean);
 
@@ -69,11 +73,11 @@ export class RuleEngineService {
 
       if (matchesPurpose) {
         reasons.push(
-          `Stated enterprise (${businessType || purpose}) is recognized under scheme vocational guidelines.`
+          `Stated enterprise (${businessType || purpose}) is eligible under scheme vocation guidelines.`
         );
       } else {
         violations.push(
-          `Scheme is designated for ${scheme.purpose.join(', ')} rather than ${businessType || purpose}.`
+          `Scheme is designated for ${scheme.purpose.slice(0, 4).join(', ')} rather than ${businessType || purpose}.`
         );
       }
 

@@ -52,25 +52,54 @@ export default function LandingPage() {
               </div>
 
               {/* Demo Quick Start Box */}
-              <div className="mt-6 p-4 rounded-xl bg-surface-card border border-border-subtle shadow-subtle">
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="text-xs font-semibold text-text-muted uppercase tracking-wider flex items-center gap-1.5">
+              <div className="mt-6 p-4 sm:p-5 rounded-xl bg-surface-card border border-border-subtle shadow-subtle">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-xs font-bold text-text-muted uppercase tracking-wider flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-secondary" />
-                    SIH Demo Requirement Quick-Fill:
+                    Faculty Test Scenarios & Prompts:
                   </span>
-                  <span className="text-[11px] text-text-muted">Click to test</span>
+                  <span className="text-[11px] text-text-muted">Click to test instant flow</span>
                 </div>
-                <button
-                  onClick={() => handleDemoPrompt("I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata.")}
-                  className="w-full text-left p-3 rounded-lg bg-surface-subtle hover:bg-surface-container border border-border-subtle/80 text-sm text-text-primary font-medium transition-colors group flex items-center justify-between"
-                >
-                  <span className="line-clamp-1 italic">
-                    "I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata."
-                  </span>
-                  <span className="text-primary text-xs font-semibold shrink-0 group-hover:translate-x-1 transition-transform ml-2">
-                    Try Prompt →
-                  </span>
-                </button>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => handleDemoPrompt("business")}
+                    className="w-full text-left p-2.5 sm:p-3 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-200 text-sm text-amber-950 font-medium transition-colors group flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-200 text-amber-900 shrink-0">NEW CLARIFICATION FLOW</span>
+                      <span className="truncate italic font-semibold">"business" (Vague prompt triggers interactive pop-up)</span>
+                    </div>
+                    <span className="text-amber-800 text-xs font-bold shrink-0 group-hover:translate-x-1 transition-transform ml-2">
+                      Test Pop-up →
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => handleDemoPrompt("I need ₹1.2 lakh to start a tailoring business. My family income is around ₹3 lakh and I live in Kolkata.")}
+                    className="w-full text-left p-2.5 sm:p-3 rounded-lg bg-surface-subtle hover:bg-surface-container border border-border-subtle/80 text-sm text-text-primary font-medium transition-colors group flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 shrink-0">COMPLETE INTENT</span>
+                      <span className="truncate italic">"I need ₹1.2 lakh to start a tailoring business in Kolkata..."</span>
+                    </div>
+                    <span className="text-primary text-xs font-semibold shrink-0 group-hover:translate-x-1 transition-transform ml-2">
+                      Direct Match →
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => handleDemoPrompt("I am an artisan pottery craftsman in Varanasi seeking ₹1.5 lakh loan with family income ₹2 lakh.")}
+                    className="w-full text-left p-2.5 sm:p-3 rounded-lg bg-surface-subtle hover:bg-surface-container border border-border-subtle/80 text-sm text-text-primary font-medium transition-colors group flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-2 truncate">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 shrink-0">ARTISAN SCHEME</span>
+                      <span className="truncate italic">"I am an artisan pottery craftsman in Varanasi seeking ₹1.5L..."</span>
+                    </div>
+                    <span className="text-primary text-xs font-semibold shrink-0 group-hover:translate-x-1 transition-transform ml-2">
+                      PM Vishwakarma →
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 

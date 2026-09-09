@@ -60,6 +60,22 @@ export class RAGService {
       };
     }
 
+    // Toolkit / PM Vishwakarma Incentive Query
+    if (q.includes('toolkit') || q.includes('vishwakarma') || q.includes('incentive') || q.includes('stipend')) {
+      return {
+        answer: `Under the PM Vishwakarma Yojana, eligible traditional artisans and craftspersons receive a modern toolkit incentive of ₹15,000 provided via digital e-vouchers, along with a skill training stipend of ₹500 per day during the mandatory 5-7 days basic skill verification course. Following training, collateral-free credit at a subsidized 5.0% interest rate is unlocked.`,
+        sourceType: 'structured_database_rules',
+        citations: [
+          {
+            title: 'PM Vishwakarma Scheme Guidelines 2024',
+            section: 'Component B: Skill Upgradation & Toolkit Incentive',
+            url: 'https://pmvishwakarma.gov.in'
+          }
+        ],
+        disclaimer: 'Toolkit vouchers are issued after successful completion of basic training.'
+      };
+    }
+
     // Repayment / Moratorium Query
     if (q.includes('repayment') || q.includes('moratorium') || q.includes('how long') || q.includes('tenure') || q.includes('grace period')) {
       return {
